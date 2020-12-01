@@ -1,0 +1,7 @@
+D:\JohnAbbottCollege\Day01HelloWorld\bin\Debug\Day01HelloWorld.exe.config
+D:\JohnAbbottCollege\Day01HelloWorld\bin\Debug\Day01HelloWorld.exe
+D:\JohnAbbottCollege\Day01HelloWorld\bin\Debug\Day01HelloWorld.pdb
+D:\JohnAbbottCollege\Day01HelloWorld\obj\Debug\Day01HelloWorld.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day01HelloWorld\obj\Debug\Day01HelloWorld.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day01HelloWorld\obj\Debug\Day01HelloWorld.exe
+D:\JohnAbbottCollege\Day01HelloWorld\obj\Debug\Day01HelloWorld.pdb
