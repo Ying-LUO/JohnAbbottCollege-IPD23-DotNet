@@ -43,11 +43,32 @@ namespace Day01HelloWorld
 
             Console.Write("How old are you?");
             //age = Console.Read();
+            // Read method only read one character
 
+            // all exception is unchecked in .net/C#
+            // the compiler will never reminder you to handle the exception
+            // normal exceptions need to remember to handle, that: parse/network io/ database connection/ files
 
             var ageAsString = Console.ReadLine();
-            bool parseSuccess = int.TryParse(ageAsString, out age);
+            bool parseSuccess = int.TryParse(ageAsString, out age);  
+            //it doesn't throw exception like JAVA, but only return boolean
+            // it return false when it parse failed, and the out parameter still assign value 0 to variable age
+            // if it return true, the variable age will be modified
+            // in java we rarely use "out" parameter which essential if you have return value, if you meet several values
+            // when you parsing the value, you're parsing the value, not the object
+            // when you doing out variable, it actually parsing the referrence of the object, it's from SQL 
+            //System.FormatException if parse string to int failed
+            // you can use try catch to catch the exception
+            // try{...}
+            // catch{
+            //       Console.WriteLine("Error: input must be an integer");
+                   //}
 
+            // Environment.Exit(1);   --- just like JAVA System.exit(1);
+
+            // format string, use place holder curely braces,{}, you can use it multiple times, you can put order in it {0}{1} inside, like index
+            // like :
+            // Console.WriteLine($"Hello {0}, you are {1} y/o, nice to meet you.", name, age};
             if (nameSuccess && parseSuccess)
                 Console.WriteLine($"Hello {name}, you are {age} y/o, nice to meet you.");
             else

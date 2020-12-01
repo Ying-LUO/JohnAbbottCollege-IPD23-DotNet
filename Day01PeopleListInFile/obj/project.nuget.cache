@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "bMB6fuFSkSh+ZB/4VpZq/grmv2zdsyLMwzQQAwAZJohGWHTHO0onh3bWbY8GHDdidCnjF12K9QvT2uWHc55t9w==",
+  "success": true,
+  "projectFilePath": "D:\\JohnAbbottCollege\\Day01PeopleListInFile\\Day01PeopleListInFile.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ewuzhou\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\ewuzhou\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

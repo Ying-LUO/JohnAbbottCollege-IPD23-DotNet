@@ -1,0 +1,9 @@
+D:\JohnAbbottCollege\Day01Cities\bin\Debug\netstandard2.0\Day01Cities.deps.json
+D:\JohnAbbottCollege\Day01Cities\bin\Debug\netstandard2.0\Day01Cities.dll
+D:\JohnAbbottCollege\Day01Cities\bin\Debug\netstandard2.0\Day01Cities.pdb
+D:\JohnAbbottCollege\Day01Cities\obj\Debug\netstandard2.0\Day01Cities.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day01Cities\obj\Debug\netstandard2.0\Day01Cities.AssemblyInfoInputs.cache
+D:\JohnAbbottCollege\Day01Cities\obj\Debug\netstandard2.0\Day01Cities.AssemblyInfo.cs
+D:\JohnAbbottCollege\Day01Cities\obj\Debug\netstandard2.0\Day01Cities.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day01Cities\obj\Debug\netstandard2.0\Day01Cities.dll
+D:\JohnAbbottCollege\Day01Cities\obj\Debug\netstandard2.0\Day01Cities.pdb

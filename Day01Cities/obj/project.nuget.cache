@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "4pCRdWwnlveXEZJIUs0WWSeS5pb4PA+UeiQs3Mzqq4rSrSMtXzg4iSYUDXzrA26MLde2tGM1znEDhshl13rb/Q==",
+  "success": true,
+  "projectFilePath": "D:\\JohnAbbottCollege\\Day01Cities\\Day01Cities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ewuzhou\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\ewuzhou\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
