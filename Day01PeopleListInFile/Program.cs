@@ -21,16 +21,28 @@ namespace Day01PeopleListInFile
             string name = Console.ReadLine();
             Console.WriteLine("Please enter the person's age: ");
             int age;
-            int.TryParse(Console.ReadLine(), out age);
-            Console.WriteLine("Please enter the person's age: ");
-            string city = Console.ReadLine();
-
-            peopleList.Add(new Person(name, age, city)
+            Boolean ageParse = int.TryParse(Console.ReadLine(), out age);
+            if (!ageParse)
             {
-                Name = name,
-                Age = age,
-                City = city
-            });
+                Console.WriteLine("Age must be numbers");
+                return;
+            }
+            Console.WriteLine("Please enter the person's city: ");
+            string city = Console.ReadLine();
+            try
+            {
+                peopleList.Add(new Person(name, age, city)
+                {
+                    Name = name,
+                    Age = age,
+                    City = city
+                });
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            
         }
 
         static void ListAllPersonInfo()
@@ -52,7 +64,11 @@ namespace Day01PeopleListInFile
                 {
                     Console.WriteLine("Person you find in People is: " + p);
                 }
-                Console.WriteLine("Cannot find the person of this name: " + name);
+                else
+                {
+                    Console.WriteLine("Cannot find the person of this name: " + name);
+                }
+                
             }
         }
 
@@ -67,30 +83,46 @@ namespace Day01PeopleListInFile
             {
                 if (p.Age < age)
                 {
-                    Console.WriteLine("{0} age younger than {1} ", p, age);
+                    Console.WriteLine("{0} is younger than {1} ", p, age);
                 }
-                Console.WriteLine("Cannot find the person younger than age: " + age);
+                else
+                {
+                    Console.WriteLine("Cannot find the person younger than age: " + age);
+                }
+                
             }
+        }
+
+        private static void SaveDataToFile()
+        {
+
         }
 
         private static int getMenuChoice()
         {
-            Console.Write(@"1. Add person info
+            int choice;
+            while (true)
+            {
+                Console.Write(@"1. Add person info
                             2. List persons info
                             3. Find a person by name
                             4. Find all persons younger than age
                             0. Exit
                             Enter your choice: ");
 
-            int choice;
-            bool parseSuccess = int.TryParse(Console.ReadLine(), out choice);
-            while (!parseSuccess || choice!=0 ||choice!=1 ||choice!=2 ||choice!=3 ||choice!=4)
-            {
-                Console.WriteLine("Please enter a valid choice[0/1/2/3/4]: ");
+
+                bool parseSuccess = int.TryParse(Console.ReadLine(), out choice);
+                // || choice!=0 ||choice!=1 ||choice!=2 ||choice!=3 ||choice!=4
+                if (!parseSuccess || choice <0 || choice >4)
+                {
+                    Console.WriteLine("Please enter a valid choice[0-4]: ");
+                    continue;
+                }
+                return choice;
+                // parse it to int and return it
             }
-            return choice;
-            // parse it to int and return it
         }
+
 
         static void Main(string[] args)
         {
@@ -115,14 +147,18 @@ namespace Day01PeopleListInFile
                         FindPersonYoungerThan();
                         break;
                     case 0:
-                        AddPersonInfo();
+                        //Environment.Exit(1);
+                        SaveDataToFile();
+                        return;
+                    default:   // default MUST ALWAYS had in the switch
+                        Console.WriteLine("Internal Error: Invalid control flow in menu");
                         break;
                 }
 
-                Console.WriteLine("Press any key to finish");
-                Console.ReadKey();
-
             }
+
+            Console.WriteLine("Press any key to finish");
+            Console.ReadKey();
         }
 
         
