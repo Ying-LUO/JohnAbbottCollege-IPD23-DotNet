@@ -112,7 +112,6 @@ namespace Day01PeopleListInFile
 
 
                 bool parseSuccess = int.TryParse(Console.ReadLine(), out choice);
-                // || choice!=0 ||choice!=1 ||choice!=2 ||choice!=3 ||choice!=4
                 if (!parseSuccess || choice <0 || choice >4)
                 {
                     Console.WriteLine("Please enter a valid choice[0-4]: ");
