@@ -1,0 +1,9 @@
+D:\JohnAbbottCollege\Day01PeopleListInFile\bin\Debug\netstandard2.0\Day01PeopleListInFile.deps.json
+D:\JohnAbbottCollege\Day01PeopleListInFile\bin\Debug\netstandard2.0\Day01PeopleListInFile.dll
+D:\JohnAbbottCollege\Day01PeopleListInFile\bin\Debug\netstandard2.0\Day01PeopleListInFile.pdb
+D:\JohnAbbottCollege\Day01PeopleListInFile\obj\Debug\netstandard2.0\Day01PeopleListInFile.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day01PeopleListInFile\obj\Debug\netstandard2.0\Day01PeopleListInFile.AssemblyInfoInputs.cache
+D:\JohnAbbottCollege\Day01PeopleListInFile\obj\Debug\netstandard2.0\Day01PeopleListInFile.AssemblyInfo.cs
+D:\JohnAbbottCollege\Day01PeopleListInFile\obj\Debug\netstandard2.0\Day01PeopleListInFile.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day01PeopleListInFile\obj\Debug\netstandard2.0\Day01PeopleListInFile.dll
+D:\JohnAbbottCollege\Day01PeopleListInFile\obj\Debug\netstandard2.0\Day01PeopleListInFile.pdb
