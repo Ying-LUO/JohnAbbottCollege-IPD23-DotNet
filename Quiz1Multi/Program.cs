@@ -128,16 +128,18 @@ namespace Quiz1Multi
 
             AirportCoordinate(AirportsList);
 
-            Dictionary<Airport, double> distance = new Dictionary<Airport, double>();
+            Dictionary<Airport, double> Distance = new Dictionary<Airport, double>();
             foreach (Airport airport in AirportsList)
             {
                 if (airport != currentAirport)
                 {
-                    distance[airport] = map[currentAirport].GetDistanceTo(map[airport]);
+                    Distance[airport] = map[currentAirport].GetDistanceTo(map[airport]);
                 }
             }
 
-            List<KeyValuePair<Airport, double>> sortedList = distance.ToList();
+            var sortedDict = from entry in Distance orderby entry.Value ascending select entry;
+
+            Console.WriteLine(sortedDict.ElementAt(0).ToString());
 
         }
 
