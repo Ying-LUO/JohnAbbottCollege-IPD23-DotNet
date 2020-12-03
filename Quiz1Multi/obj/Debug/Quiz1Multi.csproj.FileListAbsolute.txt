@@ -1,0 +1,7 @@
+D:\JohnAbbottCollege\Quiz1Multi\bin\Debug\Quiz1Multi.exe.config
+D:\JohnAbbottCollege\Quiz1Multi\bin\Debug\Quiz1Multi.exe
+D:\JohnAbbottCollege\Quiz1Multi\bin\Debug\Quiz1Multi.pdb
+D:\JohnAbbottCollege\Quiz1Multi\obj\Debug\Quiz1Multi.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Quiz1Multi\obj\Debug\Quiz1Multi.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Quiz1Multi\obj\Debug\Quiz1Multi.exe
+D:\JohnAbbottCollege\Quiz1Multi\obj\Debug\Quiz1Multi.pdb
