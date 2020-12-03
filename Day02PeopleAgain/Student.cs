@@ -72,12 +72,12 @@ namespace Day02PeopleAgain
 
         public override string ToString()
         {
-            return string.Format("Teacher name {0} is {1} y/o subject {2} years of experience {3}", Name, Age, Program, GPA);
+            return string.Format("Teacher name {0} is {1} y/o, studies {2} with {3} GPA", Name, Age, Program, GPA);
         }
 
-        string ToDataString()
+        public override string ToDataString()
         {
-            return string.Format("{0};{1};{2};{3}", Name, Age, Program, GPA);
+            return string.Format("Student;{0};{1};{2};{3}", Name, Age, Program, GPA);   // string.join can be used as well
         }
 
     }

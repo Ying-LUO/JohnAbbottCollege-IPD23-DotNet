@@ -11,7 +11,8 @@ namespace Day02PeopleAgain
         private string name; // 1-50 characters, no semicolons
         private int age; // 0-150
 
-        public Person()
+        // DONT set it as public since it may create null object when initiate new by outside, better to set as protected to just be used by child class
+        protected Person()
         {
             Name = "";
             Age = 0;
@@ -28,17 +29,27 @@ namespace Day02PeopleAgain
         {
             string[] strList = dataLine.Split(';');
 
-            try
+            if (strList.Length!=3)
             {
-                Name = strList[0];
-                Age = int.Parse(strList[1]);
-            }catch(InvalidParameterException ex)
-            {
-                Console.WriteLine("Error in parsing data line: " + ex.Message);
+                throw new InvalidParameterException("Line has invalid number of fields:\n" + dataLine);
             }
+            if (!strList[0].Equals("Person"))
+            {
+                throw new InvalidParameterException("Line does not define Person:\n" + dataLine);
+            }
+            
+            Name = strList[0];
+            int age;
+            if(int.TryParse(strList[1], out age))
+            {
+                throw new InvalidParameterException("Line age must be integer:\n" + dataLine);
+            }
+            Age = age;
 
         }
 
+
+        //modifier can be changed to internal --can be access within a project/ protected  -- cannot be access without a project
         public string Name
         {
             get
@@ -76,9 +87,11 @@ namespace Day02PeopleAgain
             return string.Format("Person name {0} is {1} y/o", Name, Age);
         }
 
-        string ToDataString()
+
+        // intend for child class to override method, has to add modifier virtual onece in the parent class
+        public virtual string ToDataString()
         {
-            return string.Format("{0};{1}", Name, Age);
+            return string.Format("Person;{0};{1}", Name, Age);
         }
 
     }
