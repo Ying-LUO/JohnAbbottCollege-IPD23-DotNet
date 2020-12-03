@@ -60,6 +60,7 @@ namespace Day02PeopleAgain
             {
                 if (value.Length > 50 || value.Length < 1 || value.Contains(";"))
                 {
+                    Program.LogFailSet?.Invoke("Name set invalid");
                     throw new InvalidParameterException("Name must be 1-50 characters, no semicolon");
                 }
                 name = value;

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A87A8A53-33C1-4AFF-B172-857640DC64D2}</ProjectGuid>
+    <ProjectGuid>{C6EA205F-92B1-4A95-8DFE-63756C9421E9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Day02PeopleAgain</RootNamespace>
-    <AssemblyName>Day02PeopleAgain</AssemblyName>
+    <RootNamespace>Quiz1Multi</RootNamespace>
+    <AssemblyName>Quiz1Multi</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Person.cs" />
-    <Compile Include="InvalidParameterException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="Teacher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

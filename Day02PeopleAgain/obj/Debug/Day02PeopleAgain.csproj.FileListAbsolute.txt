@@ -1,0 +1,7 @@
+D:\JohnAbbottCollege\Day02PeopleAgain\bin\Debug\Day02PeopleAgain.exe.config
+D:\JohnAbbottCollege\Day02PeopleAgain\bin\Debug\Day02PeopleAgain.exe
+D:\JohnAbbottCollege\Day02PeopleAgain\bin\Debug\Day02PeopleAgain.pdb
+D:\JohnAbbottCollege\Day02PeopleAgain\obj\Debug\Day02PeopleAgain.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day02PeopleAgain\obj\Debug\Day02PeopleAgain.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day02PeopleAgain\obj\Debug\Day02PeopleAgain.exe
+D:\JohnAbbottCollege\Day02PeopleAgain\obj\Debug\Day02PeopleAgain.pdb
