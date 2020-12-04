@@ -1,0 +1,15 @@
+D:\JohnAbbottCollege\WpfAllInputs\bin\Debug\WpfAllInputs.exe.config
+D:\JohnAbbottCollege\WpfAllInputs\bin\Debug\WpfAllInputs.exe
+D:\JohnAbbottCollege\WpfAllInputs\bin\Debug\WpfAllInputs.pdb
+D:\JohnAbbottCollege\WpfAllInputs\obj\Debug\WpfAllInputs.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\WpfAllInputs\obj\Debug\MainWindow.g.cs
+D:\JohnAbbottCollege\WpfAllInputs\obj\Debug\App.g.cs
+D:\JohnAbbottCollege\WpfAllInputs\obj\Debug\WpfAllInputs_MarkupCompile.cache
+D:\JohnAbbottCollege\WpfAllInputs\obj\Debug\WpfAllInputs_MarkupCompile.lref
+D:\JohnAbbottCollege\WpfAllInputs\obj\Debug\MainWindow.baml
+D:\JohnAbbottCollege\WpfAllInputs\obj\Debug\WpfAllInputs.g.resources
+D:\JohnAbbottCollege\WpfAllInputs\obj\Debug\WpfAllInputs.Properties.Resources.resources
+D:\JohnAbbottCollege\WpfAllInputs\obj\Debug\WpfAllInputs.csproj.GenerateResource.cache
+D:\JohnAbbottCollege\WpfAllInputs\obj\Debug\WpfAllInputs.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\WpfAllInputs\obj\Debug\WpfAllInputs.exe
+D:\JohnAbbottCollege\WpfAllInputs\obj\Debug\WpfAllInputs.pdb
