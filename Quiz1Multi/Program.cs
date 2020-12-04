@@ -13,7 +13,7 @@ namespace Quiz1Multi
         static List<Airport> AirportsList = new List<Airport>();
         const string DataFileName = @"..\..\data.txt";
         static string TimeStampFormat = "yyyy-mm-dd hh:mm:ss";
-        static Dictionary<Airport, GeoCoordinate> map = new Dictionary<Airport, GeoCoordinate>();
+        static Dictionary<Airport, GeoCoordinate> GeoCoordinateMap = new Dictionary<Airport, GeoCoordinate>();
 
         static void Main(string[] args)
         {
@@ -64,14 +64,16 @@ namespace Quiz1Multi
         {
             Console.WriteLine("Changing logging settings:\n1 - Logging to console\n2 - Logging to file");
             Console.WriteLine("Enter your choices, comma - separated, empty for none: ");
-            string[] logChoice = Console.ReadLine().Split(',');
-            int log;
-            if (logChoice.Length == 0)
+            string logStr = Console.ReadLine();
+
+            if (string.IsNullOrEmpty(logStr))
             {
                 Console.WriteLine("No Logger will be enabled");
                 return;
             }
 
+            string[] logChoice = logStr.Split(',');
+            int log;
             foreach (string logch in logChoice)
             {
                 if (!int.TryParse(logch, out log))
@@ -83,10 +85,12 @@ namespace Quiz1Multi
                 if (log == 1)
                 {
                     Airport.Logger += LogToConsole;
+                    Console.WriteLine("Logging to console enabled");
                 }
                 if (log == 2)
                 {
                     Airport.Logger += LogToFile;
+                    Console.WriteLine("Logging to file enabled.");
                 }
             }
   
@@ -102,7 +106,7 @@ namespace Quiz1Multi
             foreach (Airport airport in AirportsList)
             {
                 GeoCoordinate Coor = new GeoCoordinate(airport.Latitude, airport.Longitude);
-                map[airport] = Coor;
+                GeoCoordinateMap[airport] = Coor;
             }
         }
 
@@ -110,7 +114,7 @@ namespace Quiz1Multi
         {
             Console.WriteLine("Enter airport code: ");
             string code = Console.ReadLine();
-            if (!string.IsNullOrEmpty(code))
+            if (string.IsNullOrEmpty(code))
             {
                 Console.WriteLine("Code cannot be empty");
                 return;
@@ -118,28 +122,36 @@ namespace Quiz1Multi
 
             Airport currentAirport = null;
 
-            foreach (Airport airport in AirportsList)
+            //OR LINQ: from airport in AirportsList where( airport.Code.Equals(code)) select airport;
+            var curAir = AirportsList.Where(a => a.Code.Equals(code));
+
+            if (curAir.Count() == 0)
             {
-                if (airport.Code.Equals(code))
-                {
-                    currentAirport = airport;
-                }
+                Console.WriteLine("Cannot find Airport by this code");
+                return;
+            }
+            else
+            {
+                currentAirport = curAir.First();
             }
 
             AirportCoordinate(AirportsList);
 
             Dictionary<Airport, double> Distance = new Dictionary<Airport, double>();
+
             foreach (Airport airport in AirportsList)
             {
                 if (airport != currentAirport)
                 {
-                    Distance[airport] = map[currentAirport].GetDistanceTo(map[airport]);
+                    Distance[airport] = GeoCoordinateMap[currentAirport].GetDistanceTo(GeoCoordinateMap[airport]);  //GetDistanceTo return the distance between two coordinates, in meters
                 }
             }
 
-            var sortedDict = from entry in Distance orderby entry.Value ascending select entry;
+            var SmallestDistant = Distance.OrderBy(d => d.Value).First();
 
-            Console.WriteLine(sortedDict.ElementAt(0).ToString());
+            Airport NearestAirport = SmallestDistant.Key;
+
+            Console.WriteLine("Found nearest airport to be {0}/{1} distance is {2:#.##}km", NearestAirport.Code, NearestAirport.City, SmallestDistant.Value/1000);
 
         }
 
@@ -206,8 +218,9 @@ namespace Quiz1Multi
                     Longitude =lng,
                     ElevationMeters =elevM
                 });
+                Console.WriteLine("Airport added.");
             }
-            catch (ArgumentException ex)
+            catch (InvalidParameterException ex)
             {
                 Console.WriteLine("Error in Adding Aiport: " + ex.Message);
             }
@@ -219,12 +232,12 @@ namespace Quiz1Multi
             {
                 Console.Write(
                                 @"1. Add Airport
-                                2. List all airports
-                                3. Find nearest airport by code
-                                4. Find airport's elevation standard deviation
-                                5. Change log delegates
-                                0. Exit
-                                Enter your choice: ");
+2. List all airports
+3. Find nearest airport by code
+4. Find airport's elevation standard deviation
+5. Change log delegates
+0. Exit
+Enter your choice: ");
                 string choiceStr = Console.ReadLine();
                 int choice;
                 if (!int.TryParse(choiceStr, out choice) || choice < 0 || choice > 5)

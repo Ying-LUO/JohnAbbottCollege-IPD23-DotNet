@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Device.Location;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -153,7 +154,7 @@ namespace Quiz1Multi
             }
         }
 
-		public override string ToString()
+        public override string ToString()
         {
             return string.Format("{0} in {1} at {2} lat / {3} lng at {4}m elevation", Code, City, Latitude, Longitude, ElevationMeters);
         }
