@@ -12,7 +12,7 @@ namespace Quiz1Multi
     {
         static List<Airport> AirportsList = new List<Airport>();
         const string DataFileName = @"..\..\data.txt";
-        static string TimeStampFormat = "yyyy-mm-dd hh:mm:ss";
+        static string TimeStampFormat = "yyyy-MM-dd hh:mm:ss";
         static Dictionary<Airport, GeoCoordinate> GeoCoordinateMap = new Dictionary<Airport, GeoCoordinate>();
 
         static void Main(string[] args)
@@ -62,13 +62,13 @@ namespace Quiz1Multi
 
         private static void ChangeLogDelegates()
         {
-            Console.WriteLine("Changing logging settings:\n1 - Logging to console\n2 - Logging to file");
-            Console.WriteLine("Enter your choices, comma - separated, empty for none: ");
+            Console.WriteLine("\nChanging logging settings:\n1 - Logging to console\n2 - Logging to file");
+            Console.Write("Enter your choices, comma - separated, empty for none: ");
             string logStr = Console.ReadLine();
 
             if (string.IsNullOrEmpty(logStr))
             {
-                Console.WriteLine("No Logger will be enabled");
+                Console.WriteLine("No Logger will be enabled\n");
                 return;
             }
 
@@ -85,12 +85,12 @@ namespace Quiz1Multi
                 if (log == 1)
                 {
                     Airport.Logger += LogToConsole;
-                    Console.WriteLine("Logging to console enabled");
+                    Console.WriteLine("Logging to console enabled\n");
                 }
                 if (log == 2)
                 {
                     Airport.Logger += LogToFile;
-                    Console.WriteLine("Logging to file enabled.");
+                    Console.WriteLine("Logging to file enabled.\n");
                 }
             }
   
@@ -98,7 +98,17 @@ namespace Quiz1Multi
 
         private static void FindStandardDeviation()
         {
-            
+            double sumOfSquares = 0;
+            double avg = AirportsList.Average(a => a.ElevationMeters);
+            foreach (Airport airport in AirportsList)
+            {
+                double squareOfDiff = Math.Pow(airport.ElevationMeters - avg, 2);
+                sumOfSquares += squareOfDiff;
+            }
+
+            double elevMDev = Math.Sqrt(sumOfSquares / AirportsList.Count);
+            Console.WriteLine("For all airports the standard deviation of their elevation is {0:#.##}\n", elevMDev);
+
         }
 
         private static void AirportCoordinate(List<Airport> AirportsList)
@@ -112,7 +122,7 @@ namespace Quiz1Multi
 
         private static void FindAirportByCode()
         {
-            Console.WriteLine("Enter airport code: ");
+            Console.Write("Enter airport code: ");
             string code = Console.ReadLine();
             if (string.IsNullOrEmpty(code))
             {
@@ -151,7 +161,7 @@ namespace Quiz1Multi
 
             Airport NearestAirport = SmallestDistant.Key;
 
-            Console.WriteLine("Found nearest airport to be {0}/{1} distance is {2:#.##}km", NearestAirport.Code, NearestAirport.City, SmallestDistant.Value/1000);
+            Console.WriteLine("Found nearest airport to be {0}/{1} distance is {2:#.##}km\n", NearestAirport.Code, NearestAirport.City, SmallestDistant.Value/1000);
 
         }
 
@@ -165,7 +175,7 @@ namespace Quiz1Multi
         {
             Console.WriteLine("Adding airport");
 
-            Console.WriteLine("Enter code: ");
+            Console.Write("Enter code: ");
             string code = Console.ReadLine();
             if (string.IsNullOrEmpty(code))
             {
@@ -173,7 +183,7 @@ namespace Quiz1Multi
                 return;
             }
             
-            Console.WriteLine("Enter city: ");
+            Console.Write("Enter city: ");
             string city = Console.ReadLine();
             if (string.IsNullOrEmpty(city))
             {
@@ -181,7 +191,7 @@ namespace Quiz1Multi
                 return;
             }
 
-            Console.WriteLine("Enter latitude: ");
+            Console.Write("Enter latitude: ");
             double lat;
             Boolean latMParse = double.TryParse(Console.ReadLine(), out lat);
             if (!latMParse)
@@ -190,7 +200,7 @@ namespace Quiz1Multi
                 return;
             }
 
-            Console.WriteLine("Enter longitude: ");
+            Console.Write("Enter longitude: ");
             double lng;
             Boolean lngParse = double.TryParse(Console.ReadLine(), out lng);
             if (!lngParse)
@@ -199,7 +209,7 @@ namespace Quiz1Multi
                 return;
             }
 
-            Console.WriteLine("Enter elevation in meters: ");
+            Console.Write("Enter elevation in meters: ");
             int elevM;
             Boolean elevMParse = int.TryParse(Console.ReadLine(), out elevM);
             if (!elevMParse)
@@ -218,7 +228,7 @@ namespace Quiz1Multi
                     Longitude =lng,
                     ElevationMeters =elevM
                 });
-                Console.WriteLine("Airport added.");
+                Console.WriteLine("Airport added.\n");
             }
             catch (InvalidParameterException ex)
             {
