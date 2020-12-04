@@ -123,7 +123,7 @@ namespace Quiz1Multi
             Airport currentAirport = null;
 
             //OR LINQ: from airport in AirportsList where( airport.Code.Equals(code)) select airport;
-            var curAir = AirportsList.Where(a => a.Code.Equals(code));
+            var curAir = AirportsList.Where(a => a.Code.Equals(code.ToUpper()));   // uppercase input code
 
             if (curAir.Count() == 0)
             {

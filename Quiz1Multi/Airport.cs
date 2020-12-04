@@ -29,7 +29,10 @@ namespace Quiz1Multi
             Latitude = lat;
             Longitude = lng;
             ElevationMeters = elevM;
-            Logger?.Invoke("New Airport created. ");
+            if (Logger != null)
+            {
+                Logger.Invoke("New Airport created. ");
+            }
         }
 
         public Airport(string dataLine)
@@ -38,7 +41,10 @@ namespace Quiz1Multi
 
             if (strList.Length != 5)
             {
-                Logger?.Invoke("Line has invalid number of fields");
+                if (Logger != null)
+                {
+                    Logger.Invoke("Line has invalid number of fields:\n");
+                }
                 throw new InvalidParameterException("Line has invalid number of fields:\n" + dataLine);
             }
             Code = strList[0];
@@ -46,7 +52,10 @@ namespace Quiz1Multi
             double lat;
             if (!double.TryParse(strList[2], out lat))
             {
-                Logger?.Invoke("Line Latitude must be double");
+                if (Logger != null)
+                {
+                    Logger.Invoke("Line Latitude must be double:\n");
+                }
                 throw new InvalidParameterException("Line Latitude must be double:\n" + dataLine);
             }
             Latitude = lat;
@@ -54,7 +63,10 @@ namespace Quiz1Multi
             double lng;
             if (!double.TryParse(strList[3], out lng))
             {
-                Logger?.Invoke("Line Longitude must be double");
+                if (Logger != null)
+                {
+                    Logger.Invoke("Line Longitude must be double:\n");
+                }
                 throw new InvalidParameterException("Line Longitude must be double:\n" + dataLine);
             }
             Longitude = lng;
@@ -62,7 +74,10 @@ namespace Quiz1Multi
             int elevM;
             if (!int.TryParse(strList[4], out elevM))
             {
-                Logger?.Invoke("Line ElevationMeters must be integer");
+                if (Logger != null)
+                {
+                    Logger.Invoke("Line ElevationMeters must be integer:\n");
+                }
                 throw new InvalidParameterException("Line ElevationMeters must be integer:\n" + dataLine);
             }
             ElevationMeters = elevM;
@@ -78,7 +93,10 @@ namespace Quiz1Multi
             {
                 if (!CodePattern.IsMatch(value))
                 {
-                    Logger?.Invoke("Code must be 3 uppercase letters");
+                    if (Logger != null)
+                    {
+                        Logger.Invoke("Code must be 3 uppercase letters");
+                    }
                     throw new InvalidParameterException("Code must be 3 uppercase letters");
                 }
                 _code = value;
@@ -96,7 +114,10 @@ namespace Quiz1Multi
                 if (!CityPattern.IsMatch(value))
                 {
 
-                    Logger?.Invoke("City must be 1-50 characters, made up of uppercase and lowercase letters, digits, and .,- characters");
+                    if (Logger != null)
+                    {
+                        Logger.Invoke("City must be 1-50 characters, made up of uppercase and lowercase letters, digits, and .,- characters");
+                    }
                     throw new InvalidParameterException("City must be 1-50 characters, made up of uppercase and lowercase letters, digits, and .,- characters");
                 }
                 _city = value;
@@ -113,7 +134,10 @@ namespace Quiz1Multi
             {
                 if (value > 90 || value < -90)
                 {
-                    Logger?.Invoke("Latitude must be -90 to 90");
+                    if (Logger != null)
+                    {
+                        Logger.Invoke("Latitude must be -90 to 90");
+                    }
                     throw new InvalidParameterException("Latitude must be -90 to 90");
                 }
                 _latitude = value;
@@ -130,7 +154,10 @@ namespace Quiz1Multi
             {
                 if (value > 180 || value < -180)
                 {
-                    Logger?.Invoke("Longitude must be -180 to 180");
+                    if (Logger != null)
+                    {
+                        Logger.Invoke("Longitude must be -180 to 180");
+                    }
                     throw new InvalidParameterException("Longitude must be -180 to 180");
                 }
                 _longitude = value;
@@ -147,7 +174,10 @@ namespace Quiz1Multi
             {
                 if (value > 10000 || value < -1000)
                 {
-                    Logger?.Invoke("ElevationMeters must be -1000 to 10000");
+                    if (Logger != null)
+                    {
+                        Logger.Invoke("ElevationMeters must be -1000 to 10000");
+                    }
                     throw new InvalidParameterException("ElevationMeters must be -1000 to 10000");
                 }
                 _elevationMeters = value;
