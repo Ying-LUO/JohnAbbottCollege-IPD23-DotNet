@@ -82,6 +82,12 @@ namespace Quiz1Multi
                     return;
                 }
 
+                if (log != 1 || log != 2)
+                {
+                    Console.WriteLine("Please input number 1/2 ");
+                    return;
+                }
+
                 if (log == 1)
                 {
                     Airport.Logger += LogToConsole;
@@ -92,19 +98,15 @@ namespace Quiz1Multi
                     Airport.Logger += LogToFile;
                     Console.WriteLine("Logging to file enabled.\n");
                 }
+                
             }
   
         }
 
         private static void FindStandardDeviation()
         {
-            double sumOfSquares = 0;
-            double avg = AirportsList.Average(a => a.ElevationMeters);
-            foreach (Airport airport in AirportsList)
-            {
-                double squareOfDiff = Math.Pow(airport.ElevationMeters - avg, 2);
-                sumOfSquares += squareOfDiff;
-            }
+            double avg = AirportsList.Average(a => a.ElevationMeters);  // get average by LINQ
+            double sumOfSquares = AirportsList.Sum(a => Math.Pow(a.ElevationMeters - avg, 2));  //get sum of square of difference
 
             double elevMDev = Math.Sqrt(sumOfSquares / AirportsList.Count);
             Console.WriteLine("For all airports the standard deviation of their elevation is {0:#.##}\n", elevMDev);
@@ -133,22 +135,28 @@ namespace Quiz1Multi
             Airport currentAirport = null;
 
             //OR LINQ: from airport in AirportsList where( airport.Code.Equals(code)) select airport;
-            var curAir = AirportsList.Where(a => a.Code.Equals(code.ToUpper()));   // uppercase input code
+            var curAir = AirportsList.Where(a => a.Code.Equals(code.ToUpper()));   // uppercase input code to get current airport
 
             if (curAir.Count() == 0)
             {
                 Console.WriteLine("Cannot find Airport by this code");
                 return;
             }
-            else
-            {
-                currentAirport = curAir.First();
-            }
 
-            AirportCoordinate(AirportsList);
+            currentAirport = curAir.First();
 
-            Dictionary<Airport, double> Distance = new Dictionary<Airport, double>();
+            AirportCoordinate(AirportsList);  // get all geoCoordinates of airport list
 
+            var distance = GeoCoordinateMap.OrderBy(g => GeoCoordinateMap[currentAirport].GetDistanceTo(g.Value)).Where(c=> c.Key!= currentAirport);
+
+            Airport NearestAirport = distance.First().Key;
+            double smallestDistance = GeoCoordinateMap[currentAirport].GetDistanceTo(GeoCoordinateMap[NearestAirport]);
+            Console.WriteLine("Found nearest airport to be {0}/{1} distance is {2:#.##}km\n", NearestAirport.Code, NearestAirport.City, smallestDistance / 1000);
+
+            // OR BY ANOTHER DICTIONARY
+
+            //Dictionary<Airport, double> Distance = new Dictionary<Airport, double>();
+            /*
             foreach (Airport airport in AirportsList)
             {
                 if (airport != currentAirport)
@@ -156,12 +164,11 @@ namespace Quiz1Multi
                     Distance[airport] = GeoCoordinateMap[currentAirport].GetDistanceTo(GeoCoordinateMap[airport]);  //GetDistanceTo return the distance between two coordinates, in meters
                 }
             }
+            */
 
-            var SmallestDistant = Distance.OrderBy(d => d.Value).First();
-
-            Airport NearestAirport = SmallestDistant.Key;
-
-            Console.WriteLine("Found nearest airport to be {0}/{1} distance is {2:#.##}km\n", NearestAirport.Code, NearestAirport.City, SmallestDistant.Value/1000);
+            //var SmallestDistance = Distance.OrderBy(d => d.Value).First();
+            //Airport NearestAirport = SmallestDistant.Key;
+            //Console.WriteLine("Found nearest airport to be {0}/{1} distance is {2:#.##}km\n", NearestAirport.Code, NearestAirport.City, SmallestDistance.Value/1000);
 
         }
 
@@ -179,7 +186,7 @@ namespace Quiz1Multi
             string code = Console.ReadLine();
             if (string.IsNullOrEmpty(code))
             {
-                Console.WriteLine("Code cannot be empty");
+                Console.WriteLine("Code cannot be empty");  // only check empty, regex check in instantiate object
                 return;
             }
             
@@ -187,7 +194,7 @@ namespace Quiz1Multi
             string city = Console.ReadLine();
             if (string.IsNullOrEmpty(city))
             {
-                Console.WriteLine("City cannot be empty");
+                Console.WriteLine("City cannot be empty");    // only check empty, regex check in instantiate object
                 return;
             }
 
@@ -270,7 +277,7 @@ Enter your choice: ");
                         fileOutput.WriteLine(airport.ToDataString());
                     }
                 }
-                Console.WriteLine("Data saved back to file.\nGood bye.");
+                Console.WriteLine("\nData saved back to file.\nGood bye.");
             }
             catch (IOException ex)
             {
