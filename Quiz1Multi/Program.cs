@@ -155,7 +155,7 @@ namespace Quiz1Multi
 
             Console.WriteLine("Enter code: ");
             string code = Console.ReadLine();
-            if (!string.IsNullOrEmpty(code))
+            if (string.IsNullOrEmpty(code))
             {
                 Console.WriteLine("Code cannot be empty");
                 return;
@@ -163,7 +163,7 @@ namespace Quiz1Multi
             
             Console.WriteLine("Enter city: ");
             string city = Console.ReadLine();
-            if (!string.IsNullOrEmpty(city))
+            if (string.IsNullOrEmpty(city))
             {
                 Console.WriteLine("City cannot be empty");
                 return;

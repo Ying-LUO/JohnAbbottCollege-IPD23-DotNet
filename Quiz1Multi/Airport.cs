@@ -11,7 +11,7 @@ namespace Quiz1Multi
     {
 
         Regex CodePattern = new Regex(@"^[A-Z]{3}$");
-        Regex CityPattern = new Regex(@"^[A-Za-z0-9,.-]{1,50}$");
+        Regex CityPattern = new Regex(@"^[A-Za-z0-9 ,.-]{1,50}$");
 
         public delegate void LoggerDelegate(string message);
         public static LoggerDelegate Logger = null;
@@ -43,7 +43,7 @@ namespace Quiz1Multi
             Code = strList[0];
             City = strList[1];
             double lat;
-            if (double.TryParse(strList[2], out lat))
+            if (!double.TryParse(strList[2], out lat))
             {
                 Logger?.Invoke("Line Latitude must be double");
                 throw new InvalidParameterException("Line Latitude must be double:\n" + dataLine);
@@ -51,7 +51,7 @@ namespace Quiz1Multi
             Latitude = lat;
 
             double lng;
-            if (double.TryParse(strList[3], out lng))
+            if (!double.TryParse(strList[3], out lng))
             {
                 Logger?.Invoke("Line Longitude must be double");
                 throw new InvalidParameterException("Line Longitude must be double:\n" + dataLine);
@@ -59,7 +59,7 @@ namespace Quiz1Multi
             Longitude = lng;
 
             int elevM;
-            if (int.TryParse(strList[4], out elevM))
+            if (!int.TryParse(strList[4], out elevM))
             {
                 Logger?.Invoke("Line ElevationMeters must be integer");
                 throw new InvalidParameterException("Line ElevationMeters must be integer:\n" + dataLine);
