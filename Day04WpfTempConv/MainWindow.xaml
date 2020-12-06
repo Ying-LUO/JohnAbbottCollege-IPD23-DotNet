@@ -1,0 +1,49 @@
+﻿<Window x:Class="Day04WpfTempConv.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day04WpfTempConv"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="380">
+    <Grid x:Name="Grid">
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="0,5,0,5" />
+                <Setter Property="Height" Value="22" />
+            </Style>
+            <Style TargetType="{x:Type RadioButton}">
+                <Setter Property="Margin" Value="0,5,0,5" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1" Grid.Column="1" Content="Input" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="1" Grid.Column="2" x:Name="tbInput" Width="60" HorizontalAlignment="Left" TextChanged="tbInput_Changed" />
+        <Label Grid.Row="2" Grid.Column="1" Content="Input Scale" />
+        <Label Grid.Row="2" Grid.Column="3" Content="Output Scale"  />
+        <RadioButton x:Name="btInputCelsius" Grid.Row="3" Grid.Column="1" Content="Celcuis" GroupName="rbgInput" IsChecked="True" Checked="rdbt_Checked"/>
+        <RadioButton x:Name="btOutputCelsius" Grid.Row="3" Grid.Column="3" Content="Celcuis" GroupName="rbgOutput" IsChecked="True" Checked="rdbt_Checked"/>
+        <RadioButton x:Name="btInputFah" Grid.Row="4" Grid.Column="1" Content="Fahrenheit" GroupName="rbgInput" Checked="rdbt_Checked"/>
+        <RadioButton x:Name="btOutputFah" Grid.Row="4" Grid.Column="3" Content="Fahrenheit" GroupName="rbgOutput" Checked="rdbt_Checked"/>
+        <RadioButton x:Name="btInputKelvin" Grid.Row="5" Grid.Column="1" Content="Kelvin" GroupName="rbgInput" Checked="rdbt_Checked"/>
+        <RadioButton x:Name="btOutputKelvin" Grid.Row="5" Grid.Column="3" Content="Kelvin" GroupName="rbgOutput" Checked="rdbt_Checked"/>
+        <Label Grid.Row="6" Grid.Column="1" Content="Output" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="6" Grid.Column="2" x:Name="tbOutput" IsEnabled="False" Width="60" HorizontalAlignment="Left"/>
+    </Grid>
+</Window>

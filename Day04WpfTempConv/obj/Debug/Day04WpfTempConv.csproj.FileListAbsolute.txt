@@ -1,0 +1,15 @@
+D:\JohnAbbottCollege\Day04WpfTempConv\bin\Debug\Day04WpfTempConv.exe.config
+D:\JohnAbbottCollege\Day04WpfTempConv\bin\Debug\Day04WpfTempConv.exe
+D:\JohnAbbottCollege\Day04WpfTempConv\bin\Debug\Day04WpfTempConv.pdb
+D:\JohnAbbottCollege\Day04WpfTempConv\obj\Debug\Day04WpfTempConv.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day04WpfTempConv\obj\Debug\MainWindow.g.cs
+D:\JohnAbbottCollege\Day04WpfTempConv\obj\Debug\App.g.cs
+D:\JohnAbbottCollege\Day04WpfTempConv\obj\Debug\Day04WpfTempConv_MarkupCompile.cache
+D:\JohnAbbottCollege\Day04WpfTempConv\obj\Debug\Day04WpfTempConv_MarkupCompile.lref
+D:\JohnAbbottCollege\Day04WpfTempConv\obj\Debug\MainWindow.baml
+D:\JohnAbbottCollege\Day04WpfTempConv\obj\Debug\Day04WpfTempConv.g.resources
+D:\JohnAbbottCollege\Day04WpfTempConv\obj\Debug\Day04WpfTempConv.Properties.Resources.resources
+D:\JohnAbbottCollege\Day04WpfTempConv\obj\Debug\Day04WpfTempConv.csproj.GenerateResource.cache
+D:\JohnAbbottCollege\Day04WpfTempConv\obj\Debug\Day04WpfTempConv.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day04WpfTempConv\obj\Debug\Day04WpfTempConv.exe
+D:\JohnAbbottCollege\Day04WpfTempConv\obj\Debug\Day04WpfTempConv.pdb
