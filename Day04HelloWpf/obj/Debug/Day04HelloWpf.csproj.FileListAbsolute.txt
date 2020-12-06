@@ -1,0 +1,15 @@
+D:\JohnAbbottCollege\Day04HelloWpf\bin\Debug\Day04HelloWpf.exe.config
+D:\JohnAbbottCollege\Day04HelloWpf\bin\Debug\Day04HelloWpf.exe
+D:\JohnAbbottCollege\Day04HelloWpf\bin\Debug\Day04HelloWpf.pdb
+D:\JohnAbbottCollege\Day04HelloWpf\obj\Debug\Day04HelloWpf.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day04HelloWpf\obj\Debug\MainWindow.g.cs
+D:\JohnAbbottCollege\Day04HelloWpf\obj\Debug\App.g.cs
+D:\JohnAbbottCollege\Day04HelloWpf\obj\Debug\Day04HelloWpf_MarkupCompile.cache
+D:\JohnAbbottCollege\Day04HelloWpf\obj\Debug\Day04HelloWpf_MarkupCompile.lref
+D:\JohnAbbottCollege\Day04HelloWpf\obj\Debug\MainWindow.baml
+D:\JohnAbbottCollege\Day04HelloWpf\obj\Debug\Day04HelloWpf.g.resources
+D:\JohnAbbottCollege\Day04HelloWpf\obj\Debug\Day04HelloWpf.Properties.Resources.resources
+D:\JohnAbbottCollege\Day04HelloWpf\obj\Debug\Day04HelloWpf.csproj.GenerateResource.cache
+D:\JohnAbbottCollege\Day04HelloWpf\obj\Debug\Day04HelloWpf.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day04HelloWpf\obj\Debug\Day04HelloWpf.exe
+D:\JohnAbbottCollege\Day04HelloWpf\obj\Debug\Day04HelloWpf.pdb

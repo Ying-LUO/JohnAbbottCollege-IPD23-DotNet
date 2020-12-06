@@ -1,0 +1,59 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day04WpfAllInputs"
+        xmlns:Properties="clr-namespace:Day04WpfAllInputs.Properties" x:Class="Day04WpfAllInputs.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="420" ResizeMode="NoResize">
+    <Grid x:Name="Grid">
+        <Grid.Resources>
+            <Style TargetType="{x:Type ComboBox}">
+                <Setter Property="Margin" Value="0,0,0,5" />
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="0,5,0,5" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="1" Grid.Column="1" Content="Name"/>
+        <Label Grid.Row="2" Grid.Column="1" Content="Age"/>
+        <Label Grid.Row="3" Grid.Column="1" Content="Pets"/>
+        <Label Grid.Row="4" Grid.Column="1" Content="Continent of Residentce"/>
+        <Label Grid.Row="5" Grid.Column="1" Content="Preferred Temp."/>
+        <TextBox Grid.Row="5" Grid.Column="2" Name="tbTemp"
+               Text="{Binding ElementName=sldTemp, Path=Value, UpdateSourceTrigger=PropertyChanged}" />
+        <Button x:Name="btRegister" Grid.Row="6" Grid.Column="2" Content="Register Me" Grid.ColumnSpan="2" Click="btRegister_Click"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Text="Your Name..." x:Name="tbName"/>
+        <RadioButton Grid.Row="2" Grid.Column="2" Content="below 18" IsChecked="True" GroupName="rbgAge"/>
+        <RadioButton Grid.Row="2" Grid.Column="3" Content="18-35" GroupName="rbgAge" />
+        <RadioButton Grid.Row="2" Grid.Column="4" Content="36 and up" GroupName="rbgAge" />
+        <CheckBox Grid.Row="3" Grid.Column="2" Content="Cat" />
+        <CheckBox Grid.Row="3" Grid.Column="3" Content="Dog" />
+        <CheckBox Grid.Row="3" Grid.Column="4" Content="Other" />
+        <ComboBox Grid.Row="4" Grid.Column="2" x:Name="cmbContinent" Grid.ColumnSpan="3"
+                  ItemsSource="{Binding Continents}"/>
+        <Slider Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Maximum="35"  Minimum="15" Name="sldTemp"
+                TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" Interval="14" >
+        </Slider>
+        <Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" Content="Register Information:" Name="lblResult" />
+    </Grid>
+</Window>
