@@ -26,6 +26,7 @@ namespace Day04WpfAllInputs
         {
             InitializeComponent();
             DataContext = new ComboBoxViewModel();
+            CmbTest();
         }
 
         public class ComboBoxViewModel
@@ -45,7 +46,7 @@ namespace Day04WpfAllInputs
             }
         }
 
-        private void btRegister_Click(object sender, RoutedEventArgs e)
+        public void btRegister_Click(object sender, RoutedEventArgs e)
         {
             List<RadioButton> radioButtons = Grid.Children.OfType<RadioButton>().ToList();
             RadioButton rbTarget = radioButtons.Where(r => r.IsChecked == true).Single();
@@ -58,6 +59,16 @@ namespace Day04WpfAllInputs
             }
 
             lblResult.Content += string.Format("{0}; {1}; {2}; {3}; {4}", tbName.Text, rbTarget.Content, checkedStr.Substring(0, checkedStr.Length-2), cmbContinent.SelectedItem, sldTemp.Value);
+        }
+
+        public void CmbTest()
+        {
+            List<string> test = new List<string>();
+            test.Add("Item 1");
+            test.Add("Item 2");
+            test.Add("Item 3");
+            test.Add("Item 4");
+            cmbTest.ItemsSource = test;
         }
     }
 }

@@ -1,0 +1,15 @@
+D:\JohnAbbottCollege\Day04ScoopSelector\bin\Debug\Day04ScoopSelector.exe.config
+D:\JohnAbbottCollege\Day04ScoopSelector\bin\Debug\Day04ScoopSelector.exe
+D:\JohnAbbottCollege\Day04ScoopSelector\bin\Debug\Day04ScoopSelector.pdb
+D:\JohnAbbottCollege\Day04ScoopSelector\obj\Debug\Day04ScoopSelector.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day04ScoopSelector\obj\Debug\MainWindow.g.cs
+D:\JohnAbbottCollege\Day04ScoopSelector\obj\Debug\App.g.cs
+D:\JohnAbbottCollege\Day04ScoopSelector\obj\Debug\Day04ScoopSelector_MarkupCompile.cache
+D:\JohnAbbottCollege\Day04ScoopSelector\obj\Debug\Day04ScoopSelector_MarkupCompile.lref
+D:\JohnAbbottCollege\Day04ScoopSelector\obj\Debug\MainWindow.baml
+D:\JohnAbbottCollege\Day04ScoopSelector\obj\Debug\Day04ScoopSelector.g.resources
+D:\JohnAbbottCollege\Day04ScoopSelector\obj\Debug\Day04ScoopSelector.Properties.Resources.resources
+D:\JohnAbbottCollege\Day04ScoopSelector\obj\Debug\Day04ScoopSelector.csproj.GenerateResource.cache
+D:\JohnAbbottCollege\Day04ScoopSelector\obj\Debug\Day04ScoopSelector.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day04ScoopSelector\obj\Debug\Day04ScoopSelector.exe
+D:\JohnAbbottCollege\Day04ScoopSelector\obj\Debug\Day04ScoopSelector.pdb

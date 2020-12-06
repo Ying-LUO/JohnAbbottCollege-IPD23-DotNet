@@ -25,6 +25,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -55,5 +56,6 @@
                 TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" Interval="14" >
         </Slider>
         <Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" Content="Register Information:" Name="lblResult" />
+        <ComboBox Grid.Row="8" Grid.Column="1" x:Name="cmbTest" Grid.ColumnSpan="3" />
     </Grid>
 </Window>
