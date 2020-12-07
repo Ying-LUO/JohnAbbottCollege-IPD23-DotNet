@@ -32,9 +32,9 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="1" Grid.Column="1" Content="Flavours"/>
-        <ListView Grid.Row="2" Grid.Column="1" x:Name="flavourListBinding" SelectionChanged="flavourList_Changed"/>
+        <ListView Grid.Row="2" Grid.Column="1" x:Name="flavourListBinding" SelectionChanged="flavour_Changed"/>
         <Button x:Name="btAdd" Grid.Row="2" Grid.Column="3" Content="Add=>" Height="22" Click="btAdd_Click" />
-        <ListView Grid.Row="2" Grid.Column="5" x:Name="selectListBinding"/>
+        <ListView Grid.Row="2" Grid.Column="5" x:Name="selectListBinding" SelectionChanged="selected_Changed"/>
         <Label Grid.Row="1" Grid.Column="5" Content="Selected" />
         <Button x:Name="btDelete" Grid.Row="3" Grid.Column="5" Content="Delete Scoop" Click="btDelete_Click" />
         <Button x:Name="btClear" Grid.Row="3" Grid.Column="1" Content="Clear All" Click="btClear_click"/>

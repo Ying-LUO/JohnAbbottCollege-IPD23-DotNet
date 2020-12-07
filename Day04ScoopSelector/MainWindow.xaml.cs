@@ -30,6 +30,8 @@ namespace Day04ScoopSelector
 
         static List<string> flavourList = new List<string>();
         static List<string> selectList = new List<string>();
+        static int flavourIndex;
+        static int selectIndex;
 
         public void listInitial()
         {
@@ -44,8 +46,7 @@ namespace Day04ScoopSelector
             flavourList.Add("Cotton");
 
             flavourListBinding.ItemsSource = flavourList;
-            
-
+            selectListBinding.ItemsSource = selectList;
         }
 
         private void btClear_click(object sender, RoutedEventArgs e)
@@ -53,6 +54,8 @@ namespace Day04ScoopSelector
             selectList.Clear();
             flavourList.Clear();
             listInitial();
+            flavourListBinding.Items.Refresh();
+            selectListBinding.Items.Refresh();
         }
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
@@ -63,12 +66,15 @@ namespace Day04ScoopSelector
             }
             else
             {
-                var itemsToDelete = selectListBinding.SelectedItems;
-                foreach (string s in itemsToDelete)
+                //single
+                //selectList.RemoveAt(selectIndex);
+                //multiple
+                var selectedToDelete = selectListBinding.SelectedItems;
+                foreach (string s in selectedToDelete)
                 {
                     selectList.Remove(s);
-                    selectListBinding.ItemsSource = selectList;
                 }
+                selectListBinding.Items.Refresh();
             }
         }
 
@@ -80,21 +86,29 @@ namespace Day04ScoopSelector
             }
             else
             {
-                //var itemsToAdd = flavourListBinding.SelectedItems;
-                //foreach (var s in itemsToAdd)
-                //{
-                    //selectList.Add(s.ToString());
-                    selectListBinding.Items.Add(flavourListBinding.SelectedItem);
-                    //flavourList.Remove(s.ToString());
-                    flavourListBinding.Items.Remove(flavourListBinding.SelectedItem.ToString());
-                //}
+                //single record
+                //selectList.Add(flavourList.ElementAt(flavourIndex));
+                //flavourList.RemoveAt(flavourIndex);
+                //multiple records
+                var selectedFlavour = flavourListBinding.SelectedItems;
+                foreach (string s in selectedFlavour)
+                {
+                    selectList.Add(s);
+                    flavourList.Remove(s);
+                }
+                flavourListBinding.Items.Refresh();
+                selectListBinding.Items.Refresh();
             }
         }
 
-        private void flavourList_Changed(object sender, SelectionChangedEventArgs e)
+        private void flavour_Changed(object sender, SelectionChangedEventArgs e)
         {
-           
+            flavourIndex = flavourListBinding.SelectedIndex;
+        }
 
+        private void selected_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            selectIndex = selectListBinding.SelectedIndex;
         }
     }
 }
