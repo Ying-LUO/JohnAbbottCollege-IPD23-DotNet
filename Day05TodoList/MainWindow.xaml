@@ -33,7 +33,7 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Grid.Column="1" Name="lsViewTodo" SelectionMode="Single" PreviewMouseDoubleClick="listView_Click">
+        <ListView Grid.Row="1" Grid.Column="1" Name="lsViewTodo" SelectionMode="Single" SelectionChanged="listView_Click">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Task" Width="145" DisplayMemberBinding="{Binding Task}"/>

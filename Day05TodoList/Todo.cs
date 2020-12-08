@@ -32,11 +32,7 @@ namespace Day05TodoList
             }
             set
             {
-                if (!value.Equals(string.Empty))
-                {
                     OnPropertyChanged(ref _task, value);
-                }
-                
             }
         }
 
@@ -90,7 +86,7 @@ namespace Day05TodoList
             }
         }
 
-        public string ToString()
+        public override string ToString()
         {
             return string.Format("{0}; {1}; {2}; {3}{4}", Task, Difficulty, DueDate, Status, Environment.NewLine);
         }
