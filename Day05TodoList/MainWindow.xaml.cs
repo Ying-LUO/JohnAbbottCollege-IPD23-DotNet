@@ -139,8 +139,6 @@ namespace Day05TodoList
             todoList.ElementAt(index).DueDate = dpDueDate.SelectedDate.Value;
             todoList.ElementAt(index).Status = status;
             clearInput();
-            lsViewTodo.Items.Refresh();
-            
         }
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
