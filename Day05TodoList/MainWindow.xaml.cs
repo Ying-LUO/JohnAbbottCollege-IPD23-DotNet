@@ -60,7 +60,7 @@ namespace Day05TodoList
                 }
                 catch (InvalidValueException ex)
                 {
-                    throw new InvalidValueException("Error in parsing data to Todo List");
+                    throw new InvalidValueException("Error in parsing data to Todo List" + ex.Message);
                 }
                 
             }
@@ -93,13 +93,15 @@ namespace Day05TodoList
 
         private void btAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (!tbTask.Text.Equals(string.Empty))
+            if (string.IsNullOrEmpty(tbTask.Text) || dpDueDate.SelectedDate.Equals(null) || cmbStatus.SelectedItem.Equals(null))
             {
-                Enum.TryParse(cmbStatus.Text, out status);
-                todoList.Add(new Todo(tbTask.Text, (int)sldDiff.Value, dpDueDate.SelectedDate.Value, status));
-                clearInput();
+                MessageBox.Show("Please input value");
+                return;
             }
-            
+            Enum.TryParse(cmbStatus.Text, out status);
+            todoList.Add(new Todo(tbTask.Text, (int)sldDiff.Value, dpDueDate.SelectedDate.Value, status));
+            clearInput();
+            lsViewTodo.Items.Refresh();
         }
         
         private void clearInput()

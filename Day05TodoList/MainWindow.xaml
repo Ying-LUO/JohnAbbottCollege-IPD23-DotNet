@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Day05TodoList"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="750">
+        Title="MainWindow" Height="400" Width="780">
     <Grid>
         <Grid.Resources>
             <Style TargetType="{x:Type ComboBox}">
@@ -16,14 +16,14 @@
                 <Setter Property="HorizontalAlignment" Value="Center"/>
             </Style>
             <Style TargetType="{x:Type Button}">
-                <Setter Property="Margin" Value="0,0,10,0" />
+                <Setter Property="Margin" Value="5,10,0,0" />
                 <Setter Property="Width" Value="100"/>
                 <Setter Property="Height" Value="22" />
             </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
@@ -36,15 +36,9 @@
         <ListView Grid.Row="1" Grid.Column="1" Name="lsViewTodo" SelectionMode="Single" PreviewMouseDoubleClick="listView_Click">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Task" Width="115" DisplayMemberBinding="{Binding Task}"/>
+                    <GridViewColumn Header="Task" Width="145" DisplayMemberBinding="{Binding Task}"/>
                     <GridViewColumn Header="Difficulty" Width="60" DisplayMemberBinding="{Binding Difficulty}"/>
-                    <GridViewColumn Header="Due Date" Width="90" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding DueDate, StringFormat={}{0:yyyy/MM/dd}}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+                    <GridViewColumn Header="Due Date" Width="90" DisplayMemberBinding="{Binding DueDate, StringFormat={}{0:yyyy/MM/dd}}" />
                     <GridViewColumn Header="Status" Width="80" DisplayMemberBinding="{Binding Status}"/>
                 </GridView>
             </ListView.View>
