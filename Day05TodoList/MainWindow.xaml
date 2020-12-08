@@ -29,14 +29,14 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="150" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Grid.Column="1" Name="lsViewTodo" >
+        <ListView Grid.Row="1" Grid.Column="1" Name="lsViewTodo" SelectionMode="Single" PreviewMouseDoubleClick="listView_Click">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Task" Width="135" DisplayMemberBinding="{Binding Task}"/>
+                    <GridViewColumn Header="Task" Width="115" DisplayMemberBinding="{Binding Task}"/>
                     <GridViewColumn Header="Difficulty" Width="60" DisplayMemberBinding="{Binding Difficulty}"/>
                     <GridViewColumn Header="Due Date" Width="90" >
                         <GridViewColumn.CellTemplate>
@@ -45,14 +45,9 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Status" Width="60" DisplayMemberBinding="{Binding Status}"/>
+                    <GridViewColumn Header="Status" Width="80" DisplayMemberBinding="{Binding Status}"/>
                 </GridView>
             </ListView.View>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <EventSetter Event="PreviewMouseLeftButtonUp" Handler="listView_Click" />
-                </Style>
-            </ListView.ItemContainerStyle>
         </ListView>
         <Button x:Name="btExport" Grid.Row="2" Grid.Column="1" Content="Export All to File..."
                 Click="btExport_Click"/>

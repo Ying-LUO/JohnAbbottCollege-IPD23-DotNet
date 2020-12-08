@@ -106,23 +106,18 @@ namespace Day05TodoList
         {
             tbTask.Text = string.Empty;
             sldDiff.Value = 1;
-            dpDueDate.SelectedDate = DateTime.Now;
-            cmbStatus.SelectedIndex = 0;
+            dpDueDate.SelectedDate = null;
+            cmbStatus.SelectedIndex = -1;
         }
 
         private void listView_Click(object sender, MouseButtonEventArgs e)
         {
-            var item = sender as ListViewItem;
-            if (item != null && item.IsSelected)
-            {
                 int index = lsViewTodo.SelectedIndex;
                 Enum.TryParse(cmbStatus.Text, out status);
                 tbTask.Text = todoList.ElementAt(index).Task;
                 sldDiff.Value = todoList.ElementAt(index).Difficulty;
                 dpDueDate.SelectedDate = todoList.ElementAt(index).DueDate;
                 cmbStatus.Text = todoList.ElementAt(index).Status.ToString();
-            }
-            
         }
 
         private void btUpdate_Click(object sender, RoutedEventArgs e)
@@ -152,6 +147,7 @@ namespace Day05TodoList
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 todoList.RemoveAt(lsViewTodo.SelectedIndex);
+                clearInput();
             }
         }
     }
