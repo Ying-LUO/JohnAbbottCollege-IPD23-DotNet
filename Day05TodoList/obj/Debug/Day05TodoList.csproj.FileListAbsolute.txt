@@ -1,0 +1,15 @@
+D:\JohnAbbottCollege\Day05TodoList\bin\Debug\Day05TodoList.exe.config
+D:\JohnAbbottCollege\Day05TodoList\bin\Debug\Day05TodoList.exe
+D:\JohnAbbottCollege\Day05TodoList\bin\Debug\Day05TodoList.pdb
+D:\JohnAbbottCollege\Day05TodoList\obj\Debug\Day05TodoList.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day05TodoList\obj\Debug\MainWindow.g.cs
+D:\JohnAbbottCollege\Day05TodoList\obj\Debug\App.g.cs
+D:\JohnAbbottCollege\Day05TodoList\obj\Debug\Day05TodoList_MarkupCompile.cache
+D:\JohnAbbottCollege\Day05TodoList\obj\Debug\Day05TodoList_MarkupCompile.lref
+D:\JohnAbbottCollege\Day05TodoList\obj\Debug\MainWindow.baml
+D:\JohnAbbottCollege\Day05TodoList\obj\Debug\Day05TodoList.g.resources
+D:\JohnAbbottCollege\Day05TodoList\obj\Debug\Day05TodoList.Properties.Resources.resources
+D:\JohnAbbottCollege\Day05TodoList\obj\Debug\Day05TodoList.csproj.GenerateResource.cache
+D:\JohnAbbottCollege\Day05TodoList\obj\Debug\Day05TodoList.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day05TodoList\obj\Debug\Day05TodoList.exe
+D:\JohnAbbottCollege\Day05TodoList\obj\Debug\Day05TodoList.pdb

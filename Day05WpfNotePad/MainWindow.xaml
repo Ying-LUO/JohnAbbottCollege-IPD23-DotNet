@@ -25,13 +25,11 @@
                 </MenuItem>
             </Menu.Items>
         </Menu>
-        <DockPanel>
-            <TextBlock DockPanel.Dock="Bottom" Text="{Binding FilePath}" />
-            <TextBox DockPanel.Dock="Top"
+        <TextBlock DockPanel.Dock="Bottom" Text="{Binding FilePath}" />
+        <TextBox DockPanel.Dock="Top"
                      VerticalScrollBarVisibility="Visible" 
                      Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      AcceptsReturn="True"
                      AcceptsTab="True" />
-        </DockPanel>
     </DockPanel>
 </Window>

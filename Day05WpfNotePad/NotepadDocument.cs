@@ -62,12 +62,6 @@ namespace Day05WpfNotePad
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void NotifyPropertyChanged(string propName)
-        {
-            if (this.PropertyChanged != null)
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
-        }
-
         public void OnPropertyChanged<T>(ref T property, T value, [CallerMemberName] string propertyName = "")
         {
             property = value;
