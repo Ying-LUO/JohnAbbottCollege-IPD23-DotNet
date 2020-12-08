@@ -1,0 +1,15 @@
+D:\JohnAbbottCollege\Day05WpfNotePad\obj\Debug\Day05WpfNotePad.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day05WpfNotePad\obj\Debug\MainWindow.g.cs
+D:\JohnAbbottCollege\Day05WpfNotePad\obj\Debug\App.g.cs
+D:\JohnAbbottCollege\Day05WpfNotePad\obj\Debug\Day05WpfNotePad_MarkupCompile.cache
+D:\JohnAbbottCollege\Day05WpfNotePad\obj\Debug\Day05WpfNotePad_MarkupCompile.lref
+D:\JohnAbbottCollege\Day05WpfNotePad\bin\Debug\Day05WpfNotePad.exe.config
+D:\JohnAbbottCollege\Day05WpfNotePad\bin\Debug\Day05WpfNotePad.exe
+D:\JohnAbbottCollege\Day05WpfNotePad\bin\Debug\Day05WpfNotePad.pdb
+D:\JohnAbbottCollege\Day05WpfNotePad\obj\Debug\MainWindow.baml
+D:\JohnAbbottCollege\Day05WpfNotePad\obj\Debug\Day05WpfNotePad.g.resources
+D:\JohnAbbottCollege\Day05WpfNotePad\obj\Debug\Day05WpfNotePad.Properties.Resources.resources
+D:\JohnAbbottCollege\Day05WpfNotePad\obj\Debug\Day05WpfNotePad.csproj.GenerateResource.cache
+D:\JohnAbbottCollege\Day05WpfNotePad\obj\Debug\Day05WpfNotePad.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day05WpfNotePad\obj\Debug\Day05WpfNotePad.exe
+D:\JohnAbbottCollege\Day05WpfNotePad\obj\Debug\Day05WpfNotePad.pdb
