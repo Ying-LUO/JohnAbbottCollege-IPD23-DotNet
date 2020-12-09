@@ -1,0 +1,17 @@
+D:\JohnAbbottCollege\Day07Sandwich\bin\Debug\Day07Sandwich.exe.config
+D:\JohnAbbottCollege\Day07Sandwich\bin\Debug\Day07Sandwich.exe
+D:\JohnAbbottCollege\Day07Sandwich\bin\Debug\Day07Sandwich.pdb
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\Day07Sandwich.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\CustomDialog.g.cs
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\MainWindow.g.cs
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\App.g.cs
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\Day07Sandwich_MarkupCompile.cache
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\Day07Sandwich_MarkupCompile.lref
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\CustomDialog.baml
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\MainWindow.baml
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\Day07Sandwich.g.resources
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\Day07Sandwich.Properties.Resources.resources
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\Day07Sandwich.csproj.GenerateResource.cache
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\Day07Sandwich.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\Day07Sandwich.exe
+D:\JohnAbbottCollege\Day07Sandwich\obj\Debug\Day07Sandwich.pdb

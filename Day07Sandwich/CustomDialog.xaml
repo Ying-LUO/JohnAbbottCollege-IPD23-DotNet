@@ -1,0 +1,29 @@
+﻿<Window x:Class="Day07Sandwich.CustomDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day07Sandwich"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner"
+        Title="CustomDialog" Height="250" Width="400">
+    <StackPanel x:Name="SkPanel">
+        <Label Content="Bread" />
+        <ComboBox Name="cmbBread"/>
+        <GroupBox Header="Veggies">
+            <WrapPanel Name="WpPanelVeggie">
+                <CheckBox Content="Lettuce" x:Name="ckbLettuce"/>
+                <CheckBox Content="Tomatoes" x:Name="ckbTomatotes" />
+                <CheckBox Content="Cucumbers" x:Name="ckbCucumbers"/>
+            </WrapPanel>
+        </GroupBox>
+        <GroupBox Header="Meet">
+            <WrapPanel Name="WpPanelMeet">
+                <RadioButton Content="Chicken" GroupName="meet"/>
+                <RadioButton Content="Turkey" GroupName="meet"/>
+                <RadioButton Content="Tofu" GroupName="meet"/>
+            </WrapPanel>
+        </GroupBox>
+        <Button x:Name="btCancel" IsCancel="True" Content="Cancel"/>
+        <Button x:Name="btSave" IsDefault="True" Click="btSave_Click" Content="Save"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,15 @@
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\Quiz02Traveller.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\MainWindow.g.cs
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\App.g.cs
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\Quiz02Traveller_MarkupCompile.cache
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\Quiz02Traveller_MarkupCompile.lref
+D:\JohnAbbottCollege\Quiz02Traveller\bin\Debug\Quiz02Traveller.exe.config
+D:\JohnAbbottCollege\Quiz02Traveller\bin\Debug\Quiz02Traveller.exe
+D:\JohnAbbottCollege\Quiz02Traveller\bin\Debug\Quiz02Traveller.pdb
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\MainWindow.baml
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\Quiz02Traveller.g.resources
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\Quiz02Traveller.Properties.Resources.resources
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\Quiz02Traveller.csproj.GenerateResource.cache
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\Quiz02Traveller.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\Quiz02Traveller.exe
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\Quiz02Traveller.pdb

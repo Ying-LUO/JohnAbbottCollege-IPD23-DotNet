@@ -1,0 +1,15 @@
+﻿<Window x:Class="Day07HelloTwoWindows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day07HelloTwoWindows"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="315.113" Width="501.889">
+    <StackPanel>
+        <Label Content="Enter your name:"/>
+        <TextBox x:Name="tbName"/>
+        <Label Content="..." Name="lblResult" />
+        <Button x:Name="btHello" Content="Say Hello" Click="ButtonSayHello_Click"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="Day07HelloTwoWindows.HelloDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day07HelloTwoWindows"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner"
+        Title="HelloDialog" Height="198.363" Width="429.345">
+    <StackPanel>
+        <Label Name="lblMessage" Content="Label"/>
+        <Label Content="What is your age?" />
+        <TextBox x:Name="tbAge"/>
+        <Button x:Name="btOK" IsDefault="True" Content="OK" Click="btOK_Click"/>
+        <Button x:Name="btCancel" IsCancel="True" Content="Cancel"/>
+    </StackPanel>
+</Window>

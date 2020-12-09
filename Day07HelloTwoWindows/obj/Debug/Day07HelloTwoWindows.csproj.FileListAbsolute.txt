@@ -1,0 +1,16 @@
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\HelloDialog.g.cs
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\MainWindow.g.cs
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\App.g.cs
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\Day07HelloTwoWindows_MarkupCompile.cache
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\Day07HelloTwoWindows_MarkupCompile.lref
+D:\JohnAbbottCollege\Day07HelloTwoWindows\bin\Debug\Day07HelloTwoWindows.exe.config
+D:\JohnAbbottCollege\Day07HelloTwoWindows\bin\Debug\Day07HelloTwoWindows.exe
+D:\JohnAbbottCollege\Day07HelloTwoWindows\bin\Debug\Day07HelloTwoWindows.pdb
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\HelloDialog.baml
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\MainWindow.baml
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\Day07HelloTwoWindows.g.resources
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\Day07HelloTwoWindows.Properties.Resources.resources
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\Day07HelloTwoWindows.csproj.GenerateResource.cache
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\Day07HelloTwoWindows.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\Day07HelloTwoWindows.exe
+D:\JohnAbbottCollege\Day07HelloTwoWindows\obj\Debug\Day07HelloTwoWindows.pdb
