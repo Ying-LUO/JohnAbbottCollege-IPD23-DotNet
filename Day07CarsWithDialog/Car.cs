@@ -23,27 +23,6 @@ namespace Day07CarsWithDialog
             FuelType = fuelType;
         }
 
-        public Car(string dataLine)
-        {
-            String[] dataStr = dataLine.Split(';');
-            if (dataStr.Length != 3)
-            {
-                throw new DataInvalidException("Invalid data structure,\nMakeModel;EngineSize;FuelType per line");
-            }
-            try
-            {
-                MakeModel = dataStr[0];
-                double engine;
-                double.TryParse(dataStr[1], out engine);
-                FuelTypeEnum fuel;
-                FuelTypeEnum.TryParse(dataStr[2], out fuel);
-            }
-            catch (Exception ex) when (ex is ArgumentException || ex is FormatException)
-            {
-                throw new DataInvalidException("Error in parsing data to Todo List" + ex.Message);
-            }
-        }
-
         [Name("makeModel")]
         [Index(0)]
         public string MakeModel
