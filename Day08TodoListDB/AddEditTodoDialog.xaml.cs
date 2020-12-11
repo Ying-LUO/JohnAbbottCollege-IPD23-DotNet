@@ -71,7 +71,6 @@ namespace Day08TodoListDB
             {
                 MessageBox.Show(ex.Message, "Error Information");
             }
-            //
         }
     }
 }

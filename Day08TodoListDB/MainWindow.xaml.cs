@@ -29,6 +29,7 @@ namespace Day08TodoListDB
         private Todo currTodo;
         Database db;
         string operation = string.Empty;
+        
 
         public MainWindow()
         {
