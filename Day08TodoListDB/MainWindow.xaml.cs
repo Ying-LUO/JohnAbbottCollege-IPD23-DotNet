@@ -28,7 +28,7 @@ namespace Day08TodoListDB
         List<Todo> todoList = new List<Todo>();
         private Todo currTodo;
         Database db;
-        static string operation = string.Empty;
+        string operation = string.Empty;
 
         public MainWindow()
         {
