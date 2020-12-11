@@ -90,6 +90,7 @@ namespace Day07CarsWithDialog
         {
             saveDataToFile();
         }
+
         private void CommandBinding_ExportToCsv(object sender, ExecutedRoutedEventArgs e)
         {
             if (lstViewCar.SelectedItems.Count == 0)
@@ -99,6 +100,7 @@ namespace Day07CarsWithDialog
             }
             var saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "CSV files (*.csv)|*.csv";   // use | to seperate filter type, example: "CSV files (*.csv)|*.csv|Text File (*.txt)|*.txt|All files (*.*)|*.*"
+            saveFileDialog.Title = "Export to csv";
             try
             {
                 if (saveFileDialog.ShowDialog() == true)
@@ -125,7 +127,7 @@ namespace Day07CarsWithDialog
                 AddEditDialog addEditDialog = new AddEditDialog(null);
                 addEditDialog.Owner = this;
                 
-                addEditDialog.AssignResult += (m, en, f) => { model = m; engine = en; fuel = f; };
+                addEditDialog.AddNewCarCallback += (m, en, f) => { model = m; engine = en; fuel = f; };
                 bool? result = addEditDialog.ShowDialog();  // this line must be stay after the assignment, otherwise value is not assigned
 
                 if (result == true)
@@ -154,7 +156,7 @@ namespace Day07CarsWithDialog
                 AddEditDialog addEditDialog = new AddEditDialog((Car)lstViewCar.SelectedItem);
                 addEditDialog.Owner = this;
 
-                addEditDialog.AssignResult += (m, en, f) => { model = m; engine = en; fuel = f; };
+                addEditDialog.AddNewCarCallback += (m, en, f) => { model = m; engine = en; fuel = f; };
                 bool? result = addEditDialog.ShowDialog();  // this line must be stay after the assignment, otherwise value is not assigned
 
                 if (result == true)

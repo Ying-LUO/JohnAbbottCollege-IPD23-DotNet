@@ -1,0 +1,47 @@
+﻿<Window x:Class="Day08CarsDb.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day08CarsDb"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="CanResize"
+        Title="CarWithDialog" Height="350" Width="600">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New" Executed="CommandBinding_AddNewCar" />
+        <CommandBinding Command="ApplicationCommands.SaveAs" Executed="CommandBinding_ExportToCsv" />
+        <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBinding_Exit" />
+    </Window.CommandBindings>
+    <DockPanel Margin="5">
+        <Menu DockPanel.Dock="Top">
+            <Menu.Items>
+                <MenuItem Header="File">
+                    <MenuItem Header="Export to CSV.." Command="ApplicationCommands.SaveAs"/>
+                    <MenuItem Header="Exit" Command="ApplicationCommands.Close"/>
+                </MenuItem>
+                <MenuItem Header="Add" Command="ApplicationCommands.New" />
+            </Menu.Items>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Name="lblStatus" />
+            </StatusBarItem>
+        </StatusBar>
+        <ListView DockPanel.Dock="Top" Name="lstViewCar" Loaded="StatusBar" SelectionChanged="StatusBar">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="50" Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Width="190" Header="MakeModel" DisplayMemberBinding="{Binding MakeModel}"/>
+                    <GridViewColumn Width="180" Header="EngineSize(L)" DisplayMemberBinding="{Binding EngineSize}"/>
+                    <GridViewColumn Width="180" Header="FuleType" DisplayMemberBinding="{Binding FuelType}"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Update" Click="miUpdate_Click"  Name="miUpdate"/>
+                    <Separator />
+                    <MenuItem Header="Delete" Click="miDelete_Click"  Name="miDelete"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+    </DockPanel>
+</Window>

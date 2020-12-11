@@ -19,7 +19,7 @@ namespace Day07CarsWithDialog
     /// </summary>
     public partial class AddEditDialog : Window
     {
-        public event Action<string, double, Car.FuelTypeEnum> AssignResult;
+        public event Action<string, double, Car.FuelTypeEnum> AddNewCarCallback;
         private Car.FuelTypeEnum fuelType;
 
         public AddEditDialog(Car car)
@@ -52,13 +52,14 @@ namespace Day07CarsWithDialog
                 double engineSize = sldEngineSize.Value;
                 Car.FuelTypeEnum.TryParse(cmbFuelType.Text, out fuelType);
 
-                AssignResult?.Invoke(modelStr, engineSize, fuelType);
+                AddNewCarCallback?.Invoke(modelStr, engineSize, fuelType);
+                DialogResult = true;
             }
             catch (DataInvalidException ex)
             {
                 MessageBox.Show(ex.Message, "Error Information");
             }
-            DialogResult = true;
+            //
         }
     }
 }
