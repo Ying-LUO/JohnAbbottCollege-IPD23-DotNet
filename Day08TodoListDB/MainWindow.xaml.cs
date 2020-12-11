@@ -176,18 +176,14 @@ namespace Day08TodoListDB
         
         private void SortByTask_Checked(object sender, RoutedEventArgs e)
         {
-            List<Todo> sortedList = db.GetAllTodos();
-            todoList = sortedList.OrderBy(t=>t.Task).ToList();
-            lstView.ItemsSource = todoList;
-            lstView.Items.Refresh();
+            List<Todo> sortedList = db.GetAllTodos().OrderBy(t => t.Task).ToList();
+            lstView.ItemsSource = sortedList;
         }
 
         private void SortByDueDate_Checked(object sender, RoutedEventArgs e)
         {
-            List<Todo> sortedList = db.GetAllTodos();
-            todoList = sortedList.OrderBy(t => t.DueDate).ToList();
-            lstView.ItemsSource = todoList;
-            lstView.Items.Refresh();
+            List<Todo> sortedList = db.GetAllTodos().OrderBy(t => t.DueDate).ToList();
+            lstView.ItemsSource = sortedList;
         }
 
         private void StatusBar(object sender, RoutedEventArgs e)
