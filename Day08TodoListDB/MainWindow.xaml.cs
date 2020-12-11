@@ -36,6 +36,7 @@ namespace Day08TodoListDB
             db = new Database();
             loadDataFromDatabase();
             lstView.ItemsSource = todoList;
+            sortedList.DataContext = todoList;
         }
 
         private void loadDataFromDatabase()
@@ -175,7 +176,6 @@ namespace Day08TodoListDB
         
         private void SortByTask_Checked(object sender, RoutedEventArgs e)
         {
-            db = new Database();
             List<Todo> sortedList = db.GetAllTodos();
             todoList = sortedList.OrderBy(t=>t.Task).ToList();
             lstView.ItemsSource = todoList;
@@ -184,7 +184,6 @@ namespace Day08TodoListDB
 
         private void SortByDueDate_Checked(object sender, RoutedEventArgs e)
         {
-            db = new Database();
             List<Todo> sortedList = db.GetAllTodos();
             todoList = sortedList.OrderBy(t => t.DueDate).ToList();
             lstView.ItemsSource = todoList;

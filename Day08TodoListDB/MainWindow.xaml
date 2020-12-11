@@ -38,7 +38,7 @@
                 </ContextMenu>
             </ListView.ContextMenu>
         </ListView>
-        <Grid DockPanel.Dock="Right">
+        <Grid DockPanel.Dock="Right" Name="sortedList" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
