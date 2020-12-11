@@ -1,0 +1,46 @@
+﻿<Window x:Class="Quiz3FinalFlights.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Quiz3FinalFlights"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="CanResize"
+        Title="Quiz3FinalFlights" Height="350" Width="620">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New" Executed="CommandBinding_AddNewFlight" />
+        <CommandBinding Command="ApplicationCommands.SaveAs" Executed="CommandBinding_ExportToCsv" />
+        <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBinding_Exit" />
+    </Window.CommandBindings>
+    <DockPanel Margin="5">
+        <Menu DockPanel.Dock="Top">
+            <Menu.Items>
+                <MenuItem Header="File">
+                    <MenuItem Header="Save Selected" Command="ApplicationCommands.SaveAs"/>
+                    <MenuItem Header="Exit" Command="ApplicationCommands.Close"/>
+                </MenuItem>
+                <MenuItem Header="Add" Command="ApplicationCommands.New" />
+            </Menu.Items>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Name="tbStatus" />
+            </StatusBarItem>
+        </StatusBar>
+        <ListView DockPanel.Dock="Left" Name="lstView" MouseDoubleClick="Update_DoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="200" Header="OnDay" DisplayMemberBinding="{Binding OnDay, StringFormat={}{0:yyyy/MM/dd}}"/>
+                    <GridViewColumn Width="100" Header="FromCode" DisplayMemberBinding="{Binding FromCode}"/>
+                    <GridViewColumn Width="100" Header="ToCode" DisplayMemberBinding="{Binding ToCode}"/>
+                    <GridViewColumn Width="100" Header="Type" DisplayMemberBinding="{Binding Type}"/>
+                    <GridViewColumn Width="100" Header="Passengers" DisplayMemberBinding="{Binding Passengers}"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Delete" Click="miDelete_Click"  Name="miDelete"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+    </DockPanel>
+</Window>

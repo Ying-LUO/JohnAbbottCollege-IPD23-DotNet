@@ -1,0 +1,69 @@
+﻿<Window x:Class="Quiz3FinalFlights.AddEditFlightDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Quiz3FinalFlights"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner"
+        Title="AddEditFlightDialog" Height="300" Width="500">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type DatePicker}">
+                <Setter Property="Margin" Value="0 5 20 5" />
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="0 2" />
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Width" Value="100" />
+                <Setter Property="Margin" Value="0 20" />
+            </Style>
+            <Style TargetType="{x:Type Slider}">
+                <Setter Property="Margin" Value="0 5" />
+            </Style>
+            <Style TargetType="{x:Type ComboBox}">
+                <Setter Property="Margin" Value="0 5" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1" Grid.Column="1" Content="Id" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Name="tbId" Text="{Binding Id}"/>
+        <Label Grid.Row="2" Grid.Column="1" Content="Date"/>
+        <DatePicker Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Name="dpOnDay"
+                        DisplayDateStart="1900/01/01" DisplayDateEnd="2100/01/01" />
+        <Label Grid.Row="3" Grid.Column="1" Content="From Code"/>
+        <TextBox Grid.Row="3" Grid.Column="2" x:Name="tbFromCode" MaxLength="5"/>
+        <Label Grid.Row="4" Grid.Column="1" Content="To Code"/>
+        <TextBox Grid.Row="4" Grid.Column="2" x:Name="tbToCode" MaxLength="5"/>
+        <Label Grid.Row="5" Grid.Column="1" Content="Type"/>
+        <ComboBox Grid.Row="5" Grid.Column="2" x:Name="cmbType">
+            <ComboBoxItem Content="Domestic" />
+            <ComboBoxItem Content="International" />
+            <ComboBoxItem Content="Private" />
+        </ComboBox>
+        <Label Grid.Row="6" Grid.Column="1" >
+            <TextBlock Text="{Binding ElementName=sldPassenger, Path=Value, 
+                        UpdateSourceTrigger=PropertyChanged, StringFormat=Passenger   {0:#}}" />
+        </Label>
+        <Slider Grid.Row="6" Grid.Column="2" Maximum="200" Minimum="0" Name="sldPassenger"
+                TickFrequency="1" IsSnapToTickEnabled="True"/>
+        <Button Grid.Row="7" Grid.Column="1" x:Name="btCancel" Content="Cancel" IsCancel="True"/>
+        <Button Grid.Row="7" Grid.Column="2" x:Name="btSave" Content="Save" IsDefault="True" Click="btSave_Click"/>
+    </Grid>
+</Window>
