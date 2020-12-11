@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -34,10 +35,16 @@ namespace Day08TodoListDB
         public MainWindow()
         {
             InitializeComponent();
-            db = new Database();
+            try
+            {
+                db = new Database();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("FATAL: failed to connect database", "Error Information");
+            }
             loadDataFromDatabase();
             lstView.ItemsSource = todoList;
-            sortedList.DataContext = todoList;
         }
 
         private void loadDataFromDatabase()
@@ -74,6 +81,8 @@ namespace Day08TodoListDB
                     using (var writer = new StreamWriter(saveFileDialog.FileName))
                     using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
                     {
+                        //format the DateTime format in csv to remove the time
+                        //csv.Configuration
                         csv.WriteRecords(todoList);
                     }
                 }
@@ -101,6 +110,7 @@ namespace Day08TodoListDB
                     int newId = db.AddTodo(currTodo);
                     currTodo.Id = newId;
                     todoList.Add(currTodo);
+                    lstView.ItemsSource = todoList;
                     lstView.Items.Refresh();
                 }
                 operation = "Add new Todo";
@@ -179,12 +189,16 @@ namespace Day08TodoListDB
         {
             List<Todo> sortedList = db.GetAllTodos().OrderBy(t => t.Task).ToList();
             lstView.ItemsSource = sortedList;
+            operation = "Sorted by Task";
+            lstView.SelectedIndex = 0;
         }
 
         private void SortByDueDate_Checked(object sender, RoutedEventArgs e)
         {
             List<Todo> sortedList = db.GetAllTodos().OrderBy(t => t.DueDate).ToList();
             lstView.ItemsSource = sortedList;
+            operation = "Sorted by DueDate";
+            lstView.SelectedIndex = 0;
         }
 
         private void StatusBar(object sender, RoutedEventArgs e)
