@@ -1,0 +1,45 @@
+﻿<Window x:Class="Day08TodoListDB.AddEditTodoDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day08TodoListDB"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner"
+        Title="AddEditTodoDialog" Height="240" Width="500">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type DatePicker}">
+                <Setter Property="Margin" Value="0 10 20 0" />
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Width" Value="100" />
+                <Setter Property="Margin" Value="0 30" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="1" Content="Id" />
+        <TextBlock Grid.Row="0" Grid.Column="2" Name="tbId" Text="{Binding Id}"/>
+        <Label Grid.Row="1" Grid.Column="1" Content="Task"/>
+        <TextBox Grid.Row="1" Grid.Column="2" x:Name="tbTask" MaxLength="50"/>
+        <Label Grid.Row="2" Grid.Column="1" Content="Due Date"/>
+        <DatePicker Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Name="dpDueDate"
+                        DisplayDateStart="1900/01/01" DisplayDateEnd="2100/01/01" />
+        <Label Grid.Row="3" Grid.Column="1" Content="Is Done"/>
+        <CheckBox Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Name="ckbDone"/>
+        <Button Grid.Row="4" Grid.Column="1" x:Name="btCancel" Content="Cancel" IsCancel="True"/>
+        <Button Grid.Row="4" Grid.Column="2" x:Name="btSave" Content="Save" IsDefault="True" Click="btSave_Click"/>
+    </Grid>
+</Window>

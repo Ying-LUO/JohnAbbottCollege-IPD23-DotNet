@@ -53,7 +53,7 @@ namespace Day08CarsDb
                     cmd.Parameters.AddWithValue("@MakeModel", car.MakeModel);
                     cmd.Parameters.AddWithValue("@EngineSize", car.EngineSize);
                     cmd.Parameters.AddWithValue("@FuelType", car.FuelType.ToString());
-                    cmd.ExecuteNonQuery();
+                    //cmd.ExecuteNonQuery();
                     int newId = (int)cmd.ExecuteScalar();
                     Console.WriteLine($"Insert record:{car.ToString()}");
                     return newId;

@@ -1,0 +1,54 @@
+﻿<Window x:Class="Day08TodoListDB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day08TodoListDB"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="CanResize"
+        Title="TodoList" Height="450" Width="800">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.SaveAs" Executed="CommandBinding_ExportToCsv" />
+        <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBinding_Exit" />
+    </Window.CommandBindings>
+    <DockPanel Margin="5">
+        <Menu DockPanel.Dock="Top">
+            <Menu.Items>
+                <MenuItem Header="File">
+                    <MenuItem Header="Export to CSV.." Command="ApplicationCommands.SaveAs"/>
+                    <MenuItem Header="Exit" Command="ApplicationCommands.Close"/>
+                </MenuItem>
+            </Menu.Items>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Name="lblStatus" />
+            </StatusBarItem>
+        </StatusBar>
+        <ListView DockPanel.Dock="Left" Name="lstView" MouseDoubleClick="Update_DoubleClick" Loaded="StatusBar" SelectionChanged="StatusBar">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="400" Header="Task" DisplayMemberBinding="{Binding Task}"/>
+                    <GridViewColumn Width="140" Header="DueDate" DisplayMemberBinding="{Binding DueDate, StringFormat={}{0:yyyy/MM/dd}}"/>
+                    <GridViewColumn Width="100" Header="Status" DisplayMemberBinding="{Binding Status}"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Delete" Click="miDelete_Click"  Name="miDelete"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+        <Grid DockPanel.Dock="Right">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" x:Name="btAdd" Click="btAdd_Click" Content="Add" Width="80" Margin="0 10"/>
+            <Label Grid.Row="1" Content="Sort By" Margin="0 5"/>
+            <RadioButton Grid.Row='2' GroupName="SortBy" Content="Task" Margin="30 5" Checked="SortByTask_Checked"/>
+            <RadioButton Grid.Row="3" GroupName="SortBy" Content="DueDate" Margin="30 5" Checked="SortByDueDate_Checked"/>
+        </Grid>
+    </DockPanel>
+</Window>

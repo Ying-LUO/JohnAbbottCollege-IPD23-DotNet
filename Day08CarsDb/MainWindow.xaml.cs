@@ -156,9 +156,9 @@ namespace Day08CarsDb
             {
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
-                    int index = lstViewCar.SelectedIndex;
-                    db.DeleteCar(index+1);
-                    carList.RemoveAt(index);
+                    Car c = (Car)lstViewCar.SelectedItem;
+                    db.DeleteCar(c.Id);
+                    carList.Remove(c); 
                 }
             }
             catch (DataInvalidException ex)
