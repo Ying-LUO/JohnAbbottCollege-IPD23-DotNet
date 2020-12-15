@@ -1,0 +1,12 @@
+D:\JohnAbbottCollege\Day10FirstEntityFramework\bin\Debug\Day10FirstEntityFramework.exe.config
+D:\JohnAbbottCollege\Day10FirstEntityFramework\bin\Debug\Day10FirstEntityFramework.exe
+D:\JohnAbbottCollege\Day10FirstEntityFramework\bin\Debug\Day10FirstEntityFramework.pdb
+D:\JohnAbbottCollege\Day10FirstEntityFramework\bin\Debug\EntityFramework.dll
+D:\JohnAbbottCollege\Day10FirstEntityFramework\bin\Debug\EntityFramework.SqlServer.dll
+D:\JohnAbbottCollege\Day10FirstEntityFramework\bin\Debug\EntityFramework.xml
+D:\JohnAbbottCollege\Day10FirstEntityFramework\bin\Debug\EntityFramework.SqlServer.xml
+D:\JohnAbbottCollege\Day10FirstEntityFramework\obj\Debug\Day10FirstEntityFramework.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day10FirstEntityFramework\obj\Debug\Day10FirstEntityFramework.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day10FirstEntityFramework\obj\Debug\Day10FirstEntityFramework.csproj.CopyComplete
+D:\JohnAbbottCollege\Day10FirstEntityFramework\obj\Debug\Day10FirstEntityFramework.exe
+D:\JohnAbbottCollege\Day10FirstEntityFramework\obj\Debug\Day10FirstEntityFramework.pdb
