@@ -10,6 +10,7 @@ namespace Day10FirstEntityFramework
 {
     public class Person
     {
+        [Key]
         public int Id { get; set; }
 
         [Required] // means non-null
@@ -18,5 +19,10 @@ namespace Day10FirstEntityFramework
 
         [Index] // not unique, speeds up lookup operations
         public int Age { get; set; }
+
+        [NotMapped] // in memory only, not in database
+        public string Comment { get; set; }
+
+        //[EnumDataType(typeof(GenderEnum))]
     }
 }

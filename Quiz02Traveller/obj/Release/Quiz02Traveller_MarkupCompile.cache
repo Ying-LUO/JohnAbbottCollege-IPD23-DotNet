@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-D:\JohnAbbottCollege\Quiz02Traveller\obj\Debug\
+D:\JohnAbbottCollege\Quiz02Traveller\obj\Release\
 Quiz02Traveller
 none
 false
-DEBUG;TRACE
+TRACE
 D:\JohnAbbottCollege\Quiz02Traveller\App.xaml
 11151548125
 
