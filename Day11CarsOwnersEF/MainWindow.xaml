@@ -1,0 +1,64 @@
+﻿<Window x:Class="Day11CarsOwnersEF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day11CarsOwnersEF"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="CarsOwnerEF" Height="400" Width="750">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="1" Grid.Column="1" x:Name="lstViewOwner">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="#" Width="80" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Cars Number" Width="150" DisplayMemberBinding="{Binding CarsNumber}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="5"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Id" />
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Id}"/>
+            <Label Content="Name" Grid.Row="1" Grid.Column="0"/>
+            <TextBox x:Name="tbName" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="150" Margin="0 0 5 0"/>
+            <Button Grid.Row="2" Grid.Column="0" Click="btSelectImage_Click" Grid.ColumnSpan="3">
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="image" Stretch="Fill"/>
+                    <TextBlock Text="Click to select image" x:Name="tbImage"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btAdd" Click="btAdd_Click" Content="Add" Grid.Row="3" Grid.Column="0"  Width="75"/>
+            <Button x:Name="btUpdate" Click="btUpdate_Click" Content="Update" Grid.Row="3" Grid.Column="1" />
+            <Button x:Name="btDelete" Click="btDelete_Click" Content="Delete" Grid.Row="3" Grid.Column="2" />
+            <Button x:Name="btManage" Click="btManage_Click" Content="Manager Cars" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" />
+        </Grid>
+    </Grid>
+</Window>
