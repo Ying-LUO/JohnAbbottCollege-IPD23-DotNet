@@ -18,18 +18,18 @@
             <RowDefinition Height="175"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Grid.Column="1" x:Name="lstViewCar">
+        <ListView Grid.Row="1" Grid.Column="1" x:Name="lstViewCar" SelectionChanged="lstViewCar_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="#" Width="50" DisplayMemberBinding="{Binding Id}" />
-                    <GridViewColumn Header="Make &amp; Model" Width="250" DisplayMemberBinding="{Binding MakeModel}" />
+                    <GridViewColumn Header="#" Width="50" DisplayMemberBinding="{Binding CarId}" />
+                    <GridViewColumn Header="Make &amp; Model" Width="220" DisplayMemberBinding="{Binding MakeModel}" />
                     </GridView>
             </ListView.View>
         </ListView>
         <Grid Grid.Row="1" Grid.Column="2">
             <Grid.Resources>
                 <Style TargetType="{x:Type Button}">
-                    <Setter Property="Margin" Value="5" />
+                    <Setter Property="Margin" Value="5 25 5 5" />
                 </Style>
             </Grid.Resources>
             <Grid.ColumnDefinitions>
@@ -46,7 +46,7 @@
             </Grid.RowDefinitions>
             <Button IsCancel="True" Content="Done" Grid.Row="0" Grid.Column="2"/>
             <Label Grid.Row="1" Grid.Column="0" Content="Owner Name" />
-            <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding Owner.Name}" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="tbOwnerName" />
             <Label Grid.Row="2" Grid.Column="0" Content="Car Id" />
             <TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding CarId}"/>
             <Label Content="Make &amp; Model" Grid.Row="3" Grid.Column="0"/>

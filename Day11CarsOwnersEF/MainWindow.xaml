@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Day11CarsOwnersEF"
-        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="CarsOwnerEF" Height="400" Width="750">
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="CarsOwnerEF" Height="380" Width="750">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -18,10 +18,10 @@
             <RowDefinition Height="300"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Grid.Column="1" x:Name="lstViewOwner">
+        <ListView Grid.Row="1" Grid.Column="1" x:Name="lstViewOwner" SelectionChanged="lstViewOwner_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="#" Width="80" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="#" Width="80" DisplayMemberBinding="{Binding OwnerId}" />
                     <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}" />
                     <GridViewColumn Header="Cars Number" Width="150" DisplayMemberBinding="{Binding CarsNumber}" />
                 </GridView>
@@ -51,13 +51,13 @@
             <TextBox x:Name="tbName" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="150" Margin="0 0 5 0"/>
             <Button Grid.Row="2" Grid.Column="0" Click="btSelectImage_Click" Grid.ColumnSpan="3">
                 <StackPanel Orientation="Horizontal">
-                    <Image x:Name="image" Stretch="Fill"/>
+                    <Image x:Name="image" Stretch="Fill" StretchDirection="Both"/>
                     <TextBlock Text="Click to select image" x:Name="tbImage"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btAdd" Click="btAdd_Click" Content="Add" Grid.Row="3" Grid.Column="0"  Width="75"/>
-            <Button x:Name="btUpdate" Click="btUpdate_Click" Content="Update" Grid.Row="3" Grid.Column="1" />
-            <Button x:Name="btDelete" Click="btDelete_Click" Content="Delete" Grid.Row="3" Grid.Column="2" />
+            <Button x:Name="btUpdate" Click="btUpdate_Click" Content="Update" Grid.Row="3" Grid.Column="1" IsEnabled="False"/>
+            <Button x:Name="btDelete" Click="btDelete_Click" Content="Delete" Grid.Row="3" Grid.Column="2" IsEnabled="False"/>
             <Button x:Name="btManage" Click="btManage_Click" Content="Manager Cars" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" />
         </Grid>
     </Grid>

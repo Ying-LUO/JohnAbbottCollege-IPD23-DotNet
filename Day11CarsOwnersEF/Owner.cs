@@ -10,6 +10,11 @@ namespace Day11CarsOwnersEF
 {
     public class Owner
     {
+        public Owner()
+        {
+            this.CarsInGarage = new HashSet<Car>();
+        }
+
         //[Key]
         public int OwnerId { get; set; }
         [Required]
@@ -20,10 +25,14 @@ namespace Day11CarsOwnersEF
         {
             get
             {
-                return CarsInGarage.Count();
+                if (CarsInGarage == null)
+                {
+                    return 0;
+                }
+                return CarsInGarage.Count;
             }
         }
-        //[Required]
+        [Required]
         public byte[] Photo { get; set; }
         public ICollection<Car> CarsInGarage { get; set; }
 

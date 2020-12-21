@@ -1,6 +1,8 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -23,43 +25,73 @@ namespace Day11CarsOwnersEF
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Owner> ownerList = new List<Owner>();
+        string imageLocation = string.Empty;
         public MainWindow()
         {
             try
             {
                 InitializeComponent();
-
-                using (var ctx = new CarsOwnerDbContext())
-                {
-                    //ownerList = (from o in ctx.Owners select o).ToList<Owner>();
-                    ownerList = ctx.Owners.ToList<Owner>();
-                }
-                lstViewOwner.ItemsSource = ownerList;
+                resetAndRefresh();
             }
             catch (SystemException ex)
             {
                 MessageBox.Show("Fatal error connecting to database:\n" + ex.Message, "Error Information");
                 Environment.Exit(1);
-            }   
+            }
         }
 
         private void btAdd_Click(object sender, RoutedEventArgs e)
         {
-
-            using (var ctx = new CarsOwnerDbContext())
+            try
             {
-                string name = tbName.Text;
-                byte[] image = image.
+                if (string.IsNullOrEmpty(tbName.Text) || string.IsNullOrEmpty(imageLocation))
+                {
+                    MessageBox.Show("Please input Name and choose image");
+                    return;
+                }
+                byte[] image = File.ReadAllBytes(imageLocation);
+                Owner newOwner = new Owner { Name = tbName.Text, Photo = image };
+                using (var ctx = new CarsOwnerDbContext())
+                {
+                    ctx.Owners.Add(newOwner);
+                    ctx.SaveChanges();
+                    MessageBox.Show("Owner Added");
+                    resetAndRefresh();
+                }
             }
+            catch (Exception ex) when (ex is IOException || ex is FileNotFoundException || ex is SqlException)
+            {
+                MessageBox.Show("Error adding Owner to database:\n" + ex.Message, "Error Information");
+            }
+            
         }
 
+        private void resetAndRefresh()
+        {
+            tbName.Text = string.Empty;
+            imageLocation = string.Empty;
+            image.Source = null;
+            tbImage.Text = "Click to select image";
+            btUpdate.IsEnabled = false;
+            btDelete.IsEnabled = false;
+            using (var ctx = new CarsOwnerDbContext())
+            {
+                List<Owner> ownerList  = ctx.Owners.ToList<Owner>();
+                foreach (Owner o in ownerList)
+                {
+                    o.CarsInGarage = ctx.Cars.Include("Owner").Where(c => c.OwnerId == o.OwnerId).ToList<Car>();
+                }
+                lstViewOwner.ItemsSource = ownerList;
+            }
+            lstViewOwner.Items.Refresh();
+
+        }
 
         private void btUpdate_Click(object sender, RoutedEventArgs e)
         {
             if (lstViewOwner.SelectedItems.Count != 1)
             {
-                MessageBox.Show("Please choose at least one item to delete", "Information");
+                MessageBox.Show("Please choose just one item to update", "Information");
                 return;
             }
             try
@@ -68,19 +100,26 @@ namespace Day11CarsOwnersEF
                 using (var ctx = new CarsOwnerDbContext())
                 {
                     Owner toUpdate = (from o in ctx.Owners where o.OwnerId == curentOwner.OwnerId select o).FirstOrDefault<Owner>();
-                    toUpdate.Name = tbName.Text;
-                    if (image.Source.Equals(null))
+                    if (toUpdate != null)
                     {
-                        MessageBox.Show("Please select one image");
-                        return;
+                        toUpdate.Name = tbName.Text;
+                        if (!string.IsNullOrEmpty(imageLocation))
+                        {
+                            toUpdate.Photo = File.ReadAllBytes(imageLocation);
+                        }
+                        ctx.SaveChanges();
+                        MessageBox.Show("Owner Updated");
+                        resetAndRefresh();
                     }
-                    
-                    
+                    else
+                    {
+                        MessageBox.Show("Record to update not found");
+                    }
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is IOException || ex is FileNotFoundException || ex is SqlException)
             {
-                MessageBox.Show(" ERROR Manage cars: " + ex.Message, "Error Information");
+                MessageBox.Show(" ERROR Update Owner: " + ex.Message, "Error Information");
             }
         }
 
@@ -88,30 +127,35 @@ namespace Day11CarsOwnersEF
         {
             if (lstViewOwner.SelectedItems.Count != 1)
             {
-                MessageBox.Show("Please choose at least one item to delete", "Information");
+                MessageBox.Show("Please choose just one item to delete", "Information");
                 return;
             }
+            MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure to delete?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
             try
             {
-                Owner curentOwner = (Owner)lstViewOwner.SelectedItem;
-                using (var ctx = new CarsOwnerDbContext())
+                if (messageBoxResult == MessageBoxResult.Yes)
                 {
-                    Owner toDelete = (from o in ctx.Owners where o.OwnerId == curentOwner.OwnerId select o).FirstOrDefault<Owner>();
-                    if (toDelete != null)
+                    Owner curentOwner = (Owner)lstViewOwner.SelectedItem;
+                    using (var ctx = new CarsOwnerDbContext())
                     {
-                        ctx.Owners.Remove(toDelete);
-                        ctx.SaveChanges();
+                        Owner toDelete = (from o in ctx.Owners where o.OwnerId == curentOwner.OwnerId select o).FirstOrDefault<Owner>();
+                        if (toDelete != null)
+                        {
+                            ctx.Owners.Remove(toDelete);
+                            ctx.SaveChanges();
+                            MessageBox.Show("Owner Deleted");
+                            resetAndRefresh();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Record to delete not found");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Record to delete not found");
-                    }
-                    
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex) 
             {
-                MessageBox.Show(" ERROR Manage cars: " + ex.Message, "Error Information");
+                MessageBox.Show(" ERROR Delete Owner: " + ex.Message, "Error Information");
             }
         }
 
@@ -119,15 +163,18 @@ namespace Day11CarsOwnersEF
         {
             if (lstViewOwner.SelectedItems.Count != 1)
             {
-                MessageBox.Show("Please choose at least one Owner to manage car", "Information");
+                MessageBox.Show("Please choose just one Owner to manage car", "Information");
                 return;
             }
             try
             {
-                    CarsDialog manageCarsDialog = new CarsDialog((Owner)lstViewOwner.SelectedItem);
-                    manageCarsDialog.Owner = this;
+                Owner curentOwner = (Owner)lstViewOwner.SelectedItem;
+                CarsDialog manageCarsDialog = new CarsDialog(curentOwner);
+                manageCarsDialog.Owner = this;
+                manageCarsDialog.ShowDialog();
+                resetAndRefresh();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is ApplicationException || ex is SqlException)
             {
                 MessageBox.Show(" ERROR Manage cars: " + ex.Message, "Error Information");
             }
@@ -146,14 +193,46 @@ namespace Day11CarsOwnersEF
                     string fileName = openFileDialog.FileName;
                     if (!string.IsNullOrEmpty(fileName) && File.Exists(fileName))
                     {
-                        image.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-                        tbImage.Text = "";
+                        image.Source = new BitmapImage(new Uri(fileName));
+                        tbImage.Text = string.Empty;
+                        imageLocation = fileName;
                     }
                 }
-            }catch (IOException ex)
+            }
+            catch (Exception ex) when (ex is IOException || ex is FileNotFoundException)
             {
                 MessageBox.Show("ERROR Select image: " + ex.Message, "Error Information");
             }
         }
+
+        private void lstViewOwner_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                if (lstViewOwner.SelectedItems.Count != 0)
+                {
+                    btUpdate.IsEnabled = true;
+                    btDelete.IsEnabled = true;
+                    Owner curentOwner = (Owner)lstViewOwner.SelectedItem;
+                    using (var ctx = new CarsOwnerDbContext())
+                    {
+                        Owner selectedOwner = (from o in ctx.Owners where o.OwnerId == curentOwner.OwnerId select o).FirstOrDefault<Owner>();
+                        tbName.Text = selectedOwner.Name;
+                        image.Source = (ImageSource)((new ImageSourceConverter()).ConvertFrom(selectedOwner.Photo));  //WPF ImageSourceConverter class, not ImageConverter which is for WinForms
+                        tbImage.Text = string.Empty;
+                    }
+                }
+                else
+                {
+                    resetAndRefresh();
+                }
+            }
+            catch (SqlException ex) 
+            {
+                MessageBox.Show(" ERROR Select Owner: " + ex.Message, "Error Information");
+            }
+        }
+
+        
     }
 }
