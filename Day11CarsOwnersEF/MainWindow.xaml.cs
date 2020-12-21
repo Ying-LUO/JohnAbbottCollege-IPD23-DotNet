@@ -79,7 +79,7 @@ namespace Day11CarsOwnersEF
                 List<Owner> ownerList  = ctx.Owners.ToList<Owner>();
                 foreach (Owner o in ownerList)
                 {
-                    o.CarsInGarage = ctx.Cars.Include("Owner").Where(c => c.OwnerId == o.OwnerId).ToList<Car>();
+                    ctx.Entry(o).Collection(ow => ow.CarsInGarage).Load();
                 }
                 lstViewOwner.ItemsSource = ownerList;
             }
