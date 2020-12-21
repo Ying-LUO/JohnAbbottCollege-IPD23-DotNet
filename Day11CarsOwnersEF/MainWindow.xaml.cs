@@ -74,14 +74,10 @@ namespace Day11CarsOwnersEF
             tbImage.Text = "Click to select image";
             btUpdate.IsEnabled = false;
             btDelete.IsEnabled = false;
+            btManage.IsEnabled = false;
             using (var ctx = new CarsOwnerDbContext())
             {
-                List<Owner> ownerList  = ctx.Owners.ToList<Owner>();
-                foreach (Owner o in ownerList)
-                {
-                    ctx.Entry(o).Collection(ow => ow.CarsInGarage).Load();
-                }
-                lstViewOwner.ItemsSource = ownerList;
+                lstViewOwner.ItemsSource = ctx.Owners.Include("CarsInGarage").ToList<Owner>();
             }
             lstViewOwner.Items.Refresh();
 
@@ -213,6 +209,7 @@ namespace Day11CarsOwnersEF
                 {
                     btUpdate.IsEnabled = true;
                     btDelete.IsEnabled = true;
+                    btManage.IsEnabled = true;
                     Owner curentOwner = (Owner)lstViewOwner.SelectedItem;
                     using (var ctx = new CarsOwnerDbContext())
                     {

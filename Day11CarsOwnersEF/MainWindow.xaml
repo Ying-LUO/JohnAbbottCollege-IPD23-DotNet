@@ -58,7 +58,7 @@
             <Button x:Name="btAdd" Click="btAdd_Click" Content="Add" Grid.Row="3" Grid.Column="0"  Width="75"/>
             <Button x:Name="btUpdate" Click="btUpdate_Click" Content="Update" Grid.Row="3" Grid.Column="1" IsEnabled="False"/>
             <Button x:Name="btDelete" Click="btDelete_Click" Content="Delete" Grid.Row="3" Grid.Column="2" IsEnabled="False"/>
-            <Button x:Name="btManage" Click="btManage_Click" Content="Manager Cars" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Button x:Name="btManage" Click="btManage_Click" Content="Manager Cars" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" IsEnabled="False" />
         </Grid>
     </Grid>
 </Window>
