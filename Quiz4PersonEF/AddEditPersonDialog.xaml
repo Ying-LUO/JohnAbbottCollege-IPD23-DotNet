@@ -17,9 +17,9 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="Name" Margin="10"/>
-        <TextBox Grid.Row="0" Grid.Column="1" x:Name="tbName" Margin="10"/>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="tbName" Margin="10" MaxLength="50"/>
         <Label Grid.Row="1" Grid.Column="0" Content="Age" Margin="10"/>
-        <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbAge" Margin="10"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbAge" Margin="10" MaxLength="3"/>
         <Button IsCancel="True" Content="Cancel" Grid.Row="2" Grid.Column="0" Margin="20"/>
         <Button IsDefault="True" x:Name="btAdd" Click="btAdd_Click" Content="Add" Grid.Row="2" Grid.Column="1" Width="70" Margin="20"/>
     </Grid>
