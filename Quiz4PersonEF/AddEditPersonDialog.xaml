@@ -1,0 +1,26 @@
+﻿<Window x:Class="Quiz4PersonEF.AddEditPersonDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Quiz4PersonEF"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner"
+        Title="AddEditPerson" Height="200" Width="350">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Name" Margin="10"/>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="tbName" Margin="10"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Age" Margin="10"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbAge" Margin="10"/>
+        <Button IsCancel="True" Content="Cancel" Grid.Row="2" Grid.Column="0" Margin="20"/>
+        <Button IsDefault="True" x:Name="btAdd" Click="btAdd_Click" Content="Add" Grid.Row="2" Grid.Column="1" Width="70" Margin="20"/>
+    </Grid>
+</Window>

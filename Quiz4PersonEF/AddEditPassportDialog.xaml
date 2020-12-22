@@ -1,0 +1,35 @@
+﻿<Window x:Class="Quiz4PersonEF.AddEditPassportDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Quiz4PersonEF"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner"
+        Title="AddEditPassport" Height="280" Width="220">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="1" Content="Name" />
+        <TextBlock Grid.Row="0" Grid.Column="2" x:Name="tblName"/>
+        <Label Content="Passport No." Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="tbPassportNo" Grid.Row="1" Grid.Column="2" Margin="5"/>
+        <Button Grid.Row="2" Grid.Column="1" Click="btSelectImage_Click" Grid.ColumnSpan="2" Margin="5">
+            <StackPanel Orientation="Vertical">
+                <Image x:Name="image" Width="150"/>
+                <TextBlock Text="Click to select image" x:Name="tbImage"/>
+            </StackPanel>
+        </Button>
+        <Button Content="Cancel" IsCancel="True" Grid.Row="3" Grid.Column="1" Margin="5"/>
+        <Button x:Name="btSave" Click="btSave_Click" Content="Save" Grid.Row="3" Grid.Column="2" IsDefault="True" Width="75" Margin="5"/>
+    </Grid>
+</Window>
