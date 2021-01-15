@@ -1,0 +1,7 @@
+D:\JohnAbbottCollege\Quiz5SuperMix\bin\Debug\Quiz5SuperMix.exe.config
+D:\JohnAbbottCollege\Quiz5SuperMix\bin\Debug\Quiz5SuperMix.exe
+D:\JohnAbbottCollege\Quiz5SuperMix\bin\Debug\Quiz5SuperMix.pdb
+D:\JohnAbbottCollege\Quiz5SuperMix\obj\Debug\Quiz5SuperMix.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Quiz5SuperMix\obj\Debug\Quiz5SuperMix.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Quiz5SuperMix\obj\Debug\Quiz5SuperMix.exe
+D:\JohnAbbottCollege\Quiz5SuperMix\obj\Debug\Quiz5SuperMix.pdb

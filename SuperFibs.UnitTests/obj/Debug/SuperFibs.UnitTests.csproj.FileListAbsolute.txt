@@ -1,0 +1,17 @@
+D:\JohnAbbottCollege\SuperFibs.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\JohnAbbottCollege\SuperFibs.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\JohnAbbottCollege\SuperFibs.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\JohnAbbottCollege\SuperFibs.UnitTests\bin\Debug\SuperFibs.UnitTests.dll
+D:\JohnAbbottCollege\SuperFibs.UnitTests\bin\Debug\SuperFibs.UnitTests.pdb
+D:\JohnAbbottCollege\SuperFibs.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\JohnAbbottCollege\SuperFibs.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\JohnAbbottCollege\SuperFibs.UnitTests\bin\Debug\Quiz5SuperMix.exe
+D:\JohnAbbottCollege\SuperFibs.UnitTests\bin\Debug\Quiz5SuperMix.pdb
+D:\JohnAbbottCollege\SuperFibs.UnitTests\bin\Debug\Quiz5SuperMix.exe.config
+D:\JohnAbbottCollege\SuperFibs.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\JohnAbbottCollege\SuperFibs.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\JohnAbbottCollege\SuperFibs.UnitTests\obj\Debug\SuperFibs.UnitTests.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\SuperFibs.UnitTests\obj\Debug\SuperFibs.UnitTests.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\SuperFibs.UnitTests\obj\Debug\SuperFibs.UnitTests.csproj.CopyComplete
+D:\JohnAbbottCollege\SuperFibs.UnitTests\obj\Debug\SuperFibs.UnitTests.dll
+D:\JohnAbbottCollege\SuperFibs.UnitTests\obj\Debug\SuperFibs.UnitTests.pdb

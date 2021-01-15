@@ -1,0 +1,7 @@
+D:\JohnAbbottCollege\Day18Indexer\bin\Debug\Day18Indexer.exe.config
+D:\JohnAbbottCollege\Day18Indexer\bin\Debug\Day18Indexer.exe
+D:\JohnAbbottCollege\Day18Indexer\bin\Debug\Day18Indexer.pdb
+D:\JohnAbbottCollege\Day18Indexer\obj\Debug\Day18Indexer.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day18Indexer\obj\Debug\Day18Indexer.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day18Indexer\obj\Debug\Day18Indexer.exe
+D:\JohnAbbottCollege\Day18Indexer\obj\Debug\Day18Indexer.pdb
