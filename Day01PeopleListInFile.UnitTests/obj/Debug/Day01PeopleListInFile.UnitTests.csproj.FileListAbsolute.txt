@@ -1,0 +1,16 @@
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\bin\Debug\Day01PeopleListInFile.UnitTests.dll
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\bin\Debug\Day01PeopleListInFile.UnitTests.pdb
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\bin\Debug\Day01PeopleListInFile.dll
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\bin\Debug\Day01PeopleListInFile.pdb
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\obj\Debug\Day01PeopleListInFile.UnitTests.csprojAssemblyReference.cache
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\obj\Debug\Day01PeopleListInFile.UnitTests.csproj.CoreCompileInputs.cache
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\obj\Debug\Day01PeopleListInFile.UnitTests.csproj.CopyComplete
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\obj\Debug\Day01PeopleListInFile.UnitTests.dll
+D:\JohnAbbottCollege\Day01PeopleListInFile.UnitTests\obj\Debug\Day01PeopleListInFile.UnitTests.pdb
